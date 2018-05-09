@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontal\PortadaController@portada');
+Route::get('/admin', 'Admin\PortadaController@portada');
