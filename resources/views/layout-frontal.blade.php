@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title> @yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="{{ asset('css/comun.css') }}" rel="stylesheet">
     @yield('css')
 </head>
 <body>
