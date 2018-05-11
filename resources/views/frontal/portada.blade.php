@@ -179,3 +179,7 @@
     </div>
 
 @endsection
+
+@section('javascript')
+    <script src="{{ asset('js/frontal/portada.js') }}"></script>
+@endsection;
