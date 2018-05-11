@@ -13,3 +13,4 @@
 
 Route::get('/', 'Frontal\PortadaController@portada');
 Route::get('/admin', 'Admin\PortadaController@portada');
+Route::get('/user/login', 'Frontal\UserController@login');

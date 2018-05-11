@@ -21,6 +21,8 @@
                 <a class="blog-header-logo text-dark" href="#">Monllar</a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="btn btn-sm btn-outline-secondary" href="{{url('user/login')}}">Crear cuenta</a>
+                &nbsp;&nbsp;
                 <a class="btn btn-sm btn-outline-secondary" href="#">Mi Cuenta</a>
             </div>
         </div>
