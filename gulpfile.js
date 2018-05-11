@@ -8,5 +8,6 @@ elixir(function(mix) {
     mix.sass('frontal/portada.scss', 'public/css/frontal/portada.css');
     mix.sass('frontal/user_login.scss', 'public/css/frontal/user_login.css');
     mix.sass('admin/portada.scss', 'public/css/admin/portada.css');
+    mix.sass('admin/user_login.scss', 'public/css/admin/user_login.css');
     mix.typescript('monllar/Texto.ts', 'public/lib/monllar/Texto.js');
 });
