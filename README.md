@@ -68,4 +68,5 @@ luego ejecutar desde la terminal de Laragon
 ````
 $ php artisan key:generate
 $ php artisan config:cache
+$ php artisan route:clear
 ````
