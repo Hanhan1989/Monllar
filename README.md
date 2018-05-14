@@ -60,6 +60,10 @@ npm intall
 
 ````
 
+# Uso del Git
+
+- git rm -r --cached : eliminar recursivamente una carpeta
+
 ## Observaciones
 
 Cambiar de nombre el fichero ".env.example" por ".env"
@@ -70,3 +74,4 @@ $ php artisan key:generate
 $ php artisan config:cache
 $ php artisan route:clear
 ````
+
