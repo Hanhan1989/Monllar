@@ -1,1 +1,1 @@
-{"version":3,"sources":["portada.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe;CAChB","file":"portada.css","sourcesContent":["p {\n  font-size: 12px;\n}"],"sourceRoot":"/source/"}
+{"version":3,"sources":["portada.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe;CAChB","file":"portada.css","sourcesContent":["p {\r\n  font-size: 12px;\r\n}"],"sourceRoot":"/source/"}
