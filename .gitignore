@@ -2,7 +2,7 @@
 /public/hot
 /public/storage
 public/css
-public/lib/monllar/*.map
+public/lib/monllar
 /storage/*.key
 /vendor
 /.idea
