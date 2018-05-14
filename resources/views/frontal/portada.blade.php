@@ -24,7 +24,7 @@
                         </div>
                     </div>
                         <div class="button">
-                            <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                            <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                         </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button type="button" class="btn btn-primary btn-block">Comprar</button>
+                        <button id="boton" type="button" class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>
             </div>

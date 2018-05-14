@@ -2,4 +2,11 @@ p {
   font-size: 12px;
 }
 
+#boton {
+  display: none;
+  position: absolute;
+  top: 53%;
+  left: 0%;
+}
+
 /*# sourceMappingURL=portada.css.map */

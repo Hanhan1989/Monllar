@@ -1,1 +1,1 @@
-{"version":3,"sources":["portada.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe;CAChB","file":"portada.css","sourcesContent":["p {\n  font-size: 12px;\n}"],"sourceRoot":"/source/"}
+{"version":3,"sources":["portada.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe;CAChB;;AAED;EACE,cAAa;EACb,mBAAiB;EACjB,SAAQ;EACR,SAAQ;CAGT","file":"portada.css","sourcesContent":["p {\r\n  font-size: 12px;\r\n}\r\n\r\n#boton{\r\n  display: none;\r\n  position:absolute;\r\n  top: 53%;\r\n  left: 0%;\r\n\r\n\r\n}"],"sourceRoot":"/source/"}
