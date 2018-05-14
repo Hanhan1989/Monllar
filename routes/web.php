@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'Frontal\PortadaController@portada');
-Route::get('/', 'Frontal\PortadaController@portada');
 Route::get('/admin', 'Admin\UserController@login');
+Route::post('/admin/index', 'Admin\UserController@validarLogin');
 Route::get('/user/login', 'Frontal\UserController@login');
 Route::get('/{producto_slug}', 'Frontal\ProductoController@show');

@@ -9,6 +9,6 @@ class PortadaController extends Controller
 {
     public function portada()
     {
-        return view('admin/portada');
+        return view('admin.portada');
     }
 }
