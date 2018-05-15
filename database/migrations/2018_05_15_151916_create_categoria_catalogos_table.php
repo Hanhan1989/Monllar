@@ -15,6 +15,8 @@ class CreateCategoriaCatalogosTable extends Migration
     {
         Schema::create('categoria_catalogos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_categoria')->unsigned();
+            $table->integer('id_catalogo')->unsigned();
             $table->timestamps();
         });
     }
