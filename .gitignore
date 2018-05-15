@@ -15,3 +15,4 @@ yarn-error.log
 .env
 .env.example
 storage/framework/.DS_Store
+.history

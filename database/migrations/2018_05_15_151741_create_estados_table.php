@@ -15,7 +15,13 @@ class CreateEstadosTable extends Migration
     {
         Schema::create('estados', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('estado');
+            $table->integer('id_pedido')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('estados', function($table){
+            $table->foreign('id_pedido')->references('id')->on('pedidos')->onDelete('cascade');
         });
     }
 

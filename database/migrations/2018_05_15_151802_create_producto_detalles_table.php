@@ -15,6 +15,8 @@ class CreateProductoDetallesTable extends Migration
     {
         Schema::create('producto_detalles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_pedido')->unsigned();
+            $table->integer('id_producto')->unsigned();
             $table->timestamps();
         });
     }

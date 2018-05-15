@@ -15,7 +15,13 @@ class CreatePerfilsTable extends Migration
     {
         Schema::create('perfils', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('perfil');
+            $table->string('descripcion');
             $table->timestamps();
+        });
+
+        Schema::table('usuarios', function($table){
+            $table->foreign('id_perfil')->references('id')->on('perfils')->onDelete('cascade');
         });
     }
 

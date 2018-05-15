@@ -15,8 +15,18 @@ class CreateCatalogosTable extends Migration
     {
         Schema::create('catalogos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
             $table->timestamps();
         });
+
+        Schema::table('categoria_catalogos', function($table){
+            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
+        });
+
+        Schema::table('categoria_catalogos', function($table){
+            $table->foreign('id_catalogo')->references('id')->on('catalogos')->onDelete('cascade');
+        });
+
     }
 
     /**
