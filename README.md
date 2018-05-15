@@ -64,6 +64,31 @@ npm intall
 
 - git rm -r --cached : eliminar recursivamente una carpeta
 
+
+# Migrar datos 
+
+- php artisan migrate:fresh : para recrear tablas. Es útil cuando empezamos el proyecto
+- Tener en cuenta las prioridades de creación de tablas
+
+````
+
+// un perfil puede pertenecer a muchos usuarios y un usuario sólo un perfil.
+// creamos la tabla usuarios y perfiles. Luego creamos su relación y hacemos esto en perfiles. Así establecemos prioridades.
+
+ Schema::create('perfils', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('perfil');
+            $table->string('descripcion');
+            $table->timestamps();
+        });
+
+        Schema::table('usuarios', function($table){
+            $table->foreign('id_perfil')->references('id')->on('perfils')->onDelete('cascade');
+        });
+````
+
+
+
 ## Observaciones
 
 Cambiar de nombre el fichero ".env.example" por ".env"
