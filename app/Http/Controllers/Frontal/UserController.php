@@ -13,6 +13,11 @@ class UserController extends Controller
         return view('frontal.user_login');
     }
 
+    public function registrarse()
+    {
+        return view('frontal.registro');
+    }
+
     /**
      * Display a listing of the resource.
      *
