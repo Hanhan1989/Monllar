@@ -87,6 +87,33 @@ npm intall
         });
 ````
 
+# Seed tables
+
+````
+//Se ejecutarán las clases con orden que están en DatabaseSeeder.php
+
+php artisan db:seed 
+
+    public function run()
+    {
+        $this->call([
+            PerfilesTableSeeder::class,
+            UsersTableSeeder::class,
+        ]);
+    }
+
+
+````
+
+Comandos a usar
+
+`````
+
+php artisan migrate:fresh
+php artisan db:seed
+
+`````
+
 
 
 ## Observaciones
