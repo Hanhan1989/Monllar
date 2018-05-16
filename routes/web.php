@@ -14,8 +14,12 @@
 Route::get('/', 'Frontal\PortadaController@portada');
 Route::get('/admin', 'Admin\UserController@login');
 Route::post('/admin/index', 'Admin\UserController@validarLogin');
+Route::get('/admin/portada', 'Admin\PortadaController@index');
+
+
 Route::get('/user/login', 'Frontal\UserController@login');
 Route::get('/user/registro', 'Frontal\UserController@registrarse');
-Route::get('/{producto_slug}', 'Frontal\ProductoController@show');
+Route::get('/producto/{producto_slug}', 'Frontal\ProductoController@show');
 Route::resource('producto', 'Admin\ProductoController');
 
+Auth::routes();
