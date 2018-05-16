@@ -13,6 +13,10 @@ class UserController extends Controller
         return view('admin.user_login');
     }
 
+    public function validarLogin(Request $request){
+        return view('admin.portada');
+
+    }
     /**
      * Display a listing of the resource.
      *

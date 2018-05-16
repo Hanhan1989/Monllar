@@ -14,10 +14,10 @@
 
     var defaults = {
         messages: {
-            required: 'The %s field is required.',
+            required: 'Completa el campo %s.',
             matches: 'The %s field does not match the %s field.',
             "default": 'The %s field is still set to default, please change.',
-            valid_email: 'The %s field must contain a valid email address.',
+            valid_email: 'El campo %s  debe tener una dirección de correo válida.',
             valid_emails: 'The %s field must contain all valid email addresses.',
             min_length: 'The %s field must be at least %s characters in length.',
             max_length: 'The %s field must not exceed %s characters in length.',
