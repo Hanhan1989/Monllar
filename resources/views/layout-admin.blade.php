@@ -40,7 +40,8 @@
                         <a class="nav-link" href="#">ACTUALIZAR DATOS USUARIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SALIR</a>
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SALIR</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                     </li>
                 </ul>
             </div>

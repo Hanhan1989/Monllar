@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class PortadaController extends Controller
 {
-    public function portada()
+    public function index()
     {
         return view('admin.portada');
     }

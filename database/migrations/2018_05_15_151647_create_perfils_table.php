@@ -20,7 +20,7 @@ class CreatePerfilsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('usuarios', function($table){
+        Schema::table('users', function($table){
             $table->foreign('id_perfil')->references('id')->on('perfils')->onDelete('cascade');
         });
     }
