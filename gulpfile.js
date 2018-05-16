@@ -11,5 +11,6 @@ elixir(function(mix) {
     mix.sass('frontal/user_registro.scss', 'public/css/frontal/user_registro.css');
     mix.sass('admin/portada.scss', 'public/css/admin/portada.css');
     mix.sass('admin/user_login.scss', 'public/css/admin/user_login.css');
+    mix.sass('admin/productoCreate.scss', 'public/css/admin/productoCreate.css');
     mix.typescript('monllar/Texto.ts', 'public/lib/monllar/Texto.js');
 });

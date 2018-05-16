@@ -17,3 +17,5 @@ Route::post('/admin/index', 'Admin\UserController@validarLogin');
 Route::get('/user/login', 'Frontal\UserController@login');
 Route::get('/user/registro', 'Frontal\UserController@registrarse');
 Route::get('/{producto_slug}', 'Frontal\ProductoController@show');
+Route::resource('producto', 'Admin\ProductoController');
+

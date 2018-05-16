@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <a class="nav-link" href="{{url('producto/create')}}" id="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             AÑADIR PRODUCTO
                         </a>
                     </li>
