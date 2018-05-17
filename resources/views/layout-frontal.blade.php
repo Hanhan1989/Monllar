@@ -14,34 +14,40 @@
     {{-- Header slogan --}}
     <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Subscribirse</button>
-            </div>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+                <div class="col-4 pt-1">
+
+                    <a href="#myModal" role="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal">Subscribirse</a>
+
+                </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
                     <div class="modal-content">
+
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Subscripción</h5>
+                            <h4 class="modal-title">Subscripción</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
+
                         </div>
                         <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Email:</label>
-                                    <input type="text" class="form-control" id="recipient-name" placeholder="example@gmail.com">
-                                </div>
+                            <form class="form-signin" name="example_form" action="http://127.0.0.1:8000/" method="POST">
+                                <h1 class="h3 mb-3 font-weight-normal">Email</h1>
+
+                                <label for="email" class="sr-only">Email*</label>
+                                <input type="text" name="email" class="form-control" placeholder="Email"  autofocus>
+                                <div class="msg-error" id="error_campo_email"></div>
+
+
+                                <label  for="input-login-remember">
+                                    <input type="checkbox" checked="checked" required name="remember"> <span> <a data-toggle="modal" href="#privacy">Acepto la política de privacidad</a></span>
+                                </label>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Enviar</button>
                         </div>
                     </div>
                 </div>
             </div>
-
 
             <div class="col-4 text-center">
                 <a class="blog-header-logo text-dark" href="#">Monllar</a>
@@ -179,6 +185,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="{{ asset('lib/validate.js') }}"></script>
+    <script src="{{ asset('js/frontal/layout-frontal.js') }}"></script>
 
     @yield('javascript')
 
