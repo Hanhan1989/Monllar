@@ -4,6 +4,13 @@
 - php 7.1
 - mysql 5.7
 
+### Datos acceso
+
+Acceso al backoffice: 
+
+- Email: monllar@monllar.com
+- password: monllar
+
 # Estructura del proyecto
 
 - Dos grandes partes : frontal y admin
