@@ -4,7 +4,6 @@
 
 @section('css')
     <link href="{{ asset('css/frontal/ficha_producto.css') }}" rel="stylesheet">
-    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 @endsection
 
 
