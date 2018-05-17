@@ -23,3 +23,8 @@ Route::get('/producto/{producto_slug}', 'Frontal\ProductoController@show');
 Route::resource('producto', 'Admin\ProductoController');
 
 Auth::routes();
+
+
+Route::get('/politica_de_privacidad', function () {
+    return view('frontal.estaticas.politica_privacidad');
+});

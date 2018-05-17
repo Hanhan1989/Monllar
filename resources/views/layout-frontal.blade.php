@@ -31,7 +31,7 @@
 
                         </div>
                         <div class="modal-body">
-                            <form class="form-signin" name="example_form" action="http://127.0.0.1:8000/" method="POST">
+                            <form class="form-signin" name="example_form" action="" method="POST">
                                 <h1 class="h3 mb-3 font-weight-normal">Email</h1>
 
                                 <label for="email" class="sr-only">Email*</label>
@@ -40,7 +40,7 @@
 
 
                                 <label  for="input-login-remember">
-                                    <input type="checkbox" checked="checked" required name="remember"> <span> <a data-toggle="modal" href="#privacy">Acepto la política de privacidad</a></span>
+                                    <input type="checkbox" checked="checked" required name="remember"> <span> <a data-toggle="modal" href="{{url('politica_de_privacidad')}}">Acepto la política de privacidad</a></span>
                                 </label>
                                 <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
                             </form>
