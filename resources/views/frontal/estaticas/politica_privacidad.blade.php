@@ -1,6 +1,6 @@
 @extends('layout-frontal')
 
-@section('title', 'Home Monllar')
+@section('title', 'Privacidad')
 
 @section('css')
     <link href="{{ asset('css/frontal/portada.css') }}" rel="stylesheet">
@@ -57,8 +57,4 @@
             </div>
         </div>
 
-@endsection
-
-@section('javascript')
-    <script src="{{ asset('js/frontal/portada.js') }}"></script>
 @endsection
