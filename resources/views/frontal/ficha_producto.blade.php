@@ -10,29 +10,6 @@
 
 @section('content')
 
-    <!-- <h1>ficha del producto {{$slug}}</h1>
-
-    style="border: 1px solid black;"
-    <div class="row bzoom_wrap">
-        <ul id="bzoom">
-        <div class="col-md-2 ">
-           <li>
-            <img onclick="changeImage()" class="card-img-top mb-3 bzoom_big_image" src="media/images/jacket-1-grande.png" alt="Card image cap">
-           </li> <li>
-            <img onclick="changeImage2()"class="card-img-top mb-3 bzoom_big_image" src="media/images/jacket-2-grande.png" alt="Card image cap">
-            </li> <li><img class="card-img-top" src="http://via.placeholder.com/150x150" alt="Card image cap"></li>
-        </div>
-
-        <!-- *******************IMAGEN ZOOOM *************************
-        <script>
-
-        </script>
-        <div class="col-md-5 zoom" id="ex1">
-            <li>
-            <img class="card-img-top bzoom_big_image" id="imagenPrincipal"  src="media/images/jacket-1-grande.png" alt="Demon Jacket" ></li>
-        </div>
-        </ul>-->
-
     <div class="row bzoom_wrap" >
         <ul class="col-md-7" id="bzoom">
             <li>
