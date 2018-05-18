@@ -9,8 +9,7 @@
     <link href="{{ asset('css/admin/user_login.css') }}" rel="stylesheet">
 </head>
 <body  class="text-center">
-    <form class="form-signin" name="example_form" action="#" method="POST">
-        <!-- IMAGEN DE LOGIN-->
+    <form class="form-signin" name="example_form" action="{{url('admin/index')}}" method="post">
         <img class="mb-4" src="https://www.freeiconspng.com/uploads/user-login-icon-14.png" alt="login" width="100" height="100">
 
         <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>

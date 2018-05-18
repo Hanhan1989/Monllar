@@ -14,7 +14,17 @@ class UserController extends Controller
     }
 
     public function validarLogin(Request $request){
-        return view('admin.portada');
+        $validarDatos = $request->validate([
+            'email' => 'email',
+            'password' => 'required',
+        ]);
+
+        if($validarDatos) {
+            return view('admin.portada');
+        }else{
+            return view('admin.user_login');
+        }
+
     }
 
 

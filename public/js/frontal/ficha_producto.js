@@ -4,7 +4,7 @@
 
 jQuery(document).ready(function(){
     $('#spinner button').on('click', function(){
-        let input = $(this).closest('#spinner').find('input[name=qty]');
+        var input = $(this).closest('#spinner').find('input[name=qty]');
 
         if($(this).data('action') === 'increment') {
             if(input.attr('max') === undefined || parseInt(input.val()) < parseInt(input.attr('max'))) {
@@ -17,3 +17,4 @@ jQuery(document).ready(function(){
         }
     });
 });
+
