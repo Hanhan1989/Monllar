@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
-class CatalogosTableSeeder extends Seeder
+class AtributosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,29 +13,33 @@ class CatalogosTableSeeder extends Seeder
     public function run()
     {
 
-        DB::table('catalogos')->insert([
+        $faker = Faker::create();
+
+        DB::table('atributos')->insert([
             [
-                'nombre' => 'mujer',
+                'nombre' => 'talla',
+                'descripcion' => $faker->text,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'nombre' => 'hombre',
+                'nombre' => 'color',
+                'descripcion' => $faker->text,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'nombre' => 'niños',
+                'nombre' => 'altura',
+                'descripcion' => $faker->text,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'nombre' => 'bebés',
+                'nombre' => 'anchura',
+                'descripcion' => $faker->text,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]
         ]);
-  
-        
     }
 }
