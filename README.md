@@ -115,9 +115,10 @@ php artisan db:seed
 Comandos a usar
 
 `````
+composer install // si se instalaron nuevas dependencias
+php artisan migrate:fresh // eliminar todas tablas y crearlas de nuevo
+php artisan db:seed // sembrar contenido en las tablas
 
-php artisan migrate:fresh
-php artisan db:seed
 
 `````
 
