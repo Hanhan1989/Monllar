@@ -59,7 +59,7 @@
     <footer class="page-footer font-small indigo pt-0">
         <div class="footer-copyright py-3 text-center">
             <div class="col-12 col-md">
-                <a> www.monllar.com </a>
+                <span>www.monllar.com</span>
                 <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
             </div>
         </div>
