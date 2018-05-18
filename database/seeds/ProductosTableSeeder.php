@@ -52,7 +52,7 @@ class ProductosTableSeeder extends Seeder
                 'nombre' => 'Lorem ipsum lorem',
                 'descripcion' => $faker->text,
                 'informacion_adicional' => $faker->text,
-                'precio' => $faker->randomFloat(2, 0, 2),
+                'precio' => $faker->randomFloat(4, 0, 4),
                 'stock' => '100',
                 'path_imagen' => $faker->imageUrl($width = 600, $height = 300),
                 'created_at' => date('Y-m-d H:i:s'),
