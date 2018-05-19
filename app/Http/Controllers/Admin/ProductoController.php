@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Catalogo;
 
 class ProductoController extends Controller
 {
@@ -24,7 +25,12 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('admin.productoCreate');
+        $data = [];
+        $catalogoCategorias = Catalogo::with('categorias')->get();
+        //$data['catalogo_categorias']= $catalogoCategorias->toJson(JSON_PRETTY_PRINT);        
+        $data['catalogo_categorias'] = $catalogoCategorias;
+        
+        return view('admin.productoCreate', compact('data'));
     }
 
     /**
