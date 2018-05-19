@@ -20,7 +20,7 @@ Route::get('/admin/portada', 'Admin\PortadaController@index');
 Route::get('/user/login', 'Frontal\UserController@login');
 Route::get('/user/registro', 'Frontal\UserController@registrarse');
 Route::get('/producto/{producto_slug}', 'Frontal\ProductoController@show');
-Route::resource('producto', 'Admin\ProductoController');
+Route::resource('admin/producto', 'Admin\ProductoController');
 
 Auth::routes();
 
