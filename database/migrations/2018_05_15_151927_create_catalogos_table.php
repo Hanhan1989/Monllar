@@ -19,14 +19,9 @@ class CreateCatalogosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('categoria_catalogos', function($table){
-            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
-        });
-
-        Schema::table('categoria_catalogos', function($table){
+        Schema::table('categorias', function($table){
             $table->foreign('id_catalogo')->references('id')->on('catalogos')->onDelete('cascade');
         });
-
     }
 
     /**

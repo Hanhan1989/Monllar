@@ -116,6 +116,7 @@ Comandos a usar
 
 `````
 composer install // si se instalaron nuevas dependencias
+composer dump-autoload // pillar los archivos de migrations
 php artisan migrate:fresh // eliminar todas tablas y crearlas de nuevo
 php artisan db:seed // sembrar contenido en las tablas
 
