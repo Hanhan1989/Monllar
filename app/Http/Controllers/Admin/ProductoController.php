@@ -27,7 +27,6 @@ class ProductoController extends Controller
     {
         $data = [];
         $catalogoCategorias = Catalogo::with('categorias')->get();
-        //$data['catalogo_categorias']= $catalogoCategorias->toJson(JSON_PRETTY_PRINT);        
         $data['catalogo_categorias'] = $catalogoCategorias;
         
         return view('admin.productoCreate', compact('data'));
