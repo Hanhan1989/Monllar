@@ -4,13 +4,19 @@ namespace App\Http\Controllers\Frontal;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Producto;
 
 class ProductoController extends Controller
 {
 
     public function listar($id_categoria)
     {
-        return view('frontal.lista_productos', compact('id_categoria'));
+        $productos = Producto::where('id_categoria', $id_categoria)
+            ->orderBy('nombre', 'asc')
+            ->take(10)
+            ->get();
+
+        return view('frontal.lista_productos', compact('productos'));
     }
 
     /**
