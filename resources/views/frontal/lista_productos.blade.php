@@ -14,6 +14,7 @@
                 <li>{{$producto->nombre}} | {{$producto->path_imagen_1}} | {{$producto->descripcion}} | {{$producto->precio}} </li>
             @endforeach
         </ul>
+    {{$productos->links()}}
 @endsection
 
 @section('javascript')

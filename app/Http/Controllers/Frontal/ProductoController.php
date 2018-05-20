@@ -13,8 +13,7 @@ class ProductoController extends Controller
     {
         $productos = Producto::where('id_categoria', $id_categoria)
             ->orderBy('nombre', 'asc')
-            ->take(10)
-            ->get();
+            ->paginate(10);
 
         return view('frontal.lista_productos', compact('productos'));
     }
