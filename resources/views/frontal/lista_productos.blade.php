@@ -8,7 +8,12 @@
 @endsection
 
 @section('content')
-    <h1>Lista de productos {{$id_categoria}}</h1>
+    <h1>Lista de productos </h1>
+        <ul>
+            @foreach ($productos as $producto)
+                <li>{{$producto->nombre}} | {{$producto->path_imagen_1}} | {{$producto->descripcion}} | {{$producto->precio}} </li>
+            @endforeach
+        </ul>
 @endsection
 
 @section('javascript')
