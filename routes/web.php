@@ -28,3 +28,7 @@ Auth::routes();
 Route::get('/politica_de_privacidad', function () {
     return view('frontal.estaticas.politica_privacidad');
 });
+
+Route::get('/ubicacion', function () {
+    return view('frontal.estaticas.ubicacion');
+});
