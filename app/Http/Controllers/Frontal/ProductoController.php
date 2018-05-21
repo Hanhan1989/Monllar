@@ -4,38 +4,18 @@ namespace App\Http\Controllers\Frontal;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Producto;
 
 class ProductoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function listar($id_categoria)
     {
-        //
-    }
+        $productos = Producto::where('id_categoria', $id_categoria)
+            ->orderBy('nombre', 'asc')
+            ->paginate(10);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('frontal.lista_productos', compact('productos'));
     }
 
     /**
@@ -49,37 +29,5 @@ class ProductoController extends Controller
         return view('frontal.ficha_producto', compact('slug'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

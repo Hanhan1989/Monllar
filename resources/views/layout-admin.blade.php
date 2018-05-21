@@ -14,6 +14,9 @@
     <header class="masthead mb-auto">
         <nav class="navbar navbar-expand-lg navbar-light bg-light menu-principal">
             <a class="navbar-brand" href="#">MENÚ ADMIN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
@@ -56,7 +59,7 @@
     <footer class="page-footer font-small indigo pt-0">
         <div class="footer-copyright py-3 text-center">
             <div class="col-12 col-md">
-                <a href="http://monllar.com/"> www.monllar.com </a>
+                <span>www.monllar.com</span>
                 <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
             </div>
         </div>

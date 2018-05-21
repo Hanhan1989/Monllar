@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             CatalogosTableSeeder::class,
             CategoriasTableSeeder::class,
-            Categoria_CatalogosTableSeeder::class,
             ProductosTableSeeder::class,
             AtributosTableSeeder::class,
             Atributos_ProductosTableSeeder::class,

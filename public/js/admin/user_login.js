@@ -1,4 +1,4 @@
-var validator = new FormValidator('example_form', [ {
+var validator = new FormValidator('login_form', [ {
     name: 'email',
     //display: 'required',
     rules: 'required|valid_email'
