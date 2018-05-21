@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="#">Monllar</a>
+            <a class="blog-header-logo text-dark" href="{{url('/')}}">Monllar</a>
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
             <a class="btn btn-sm btn-outline-secondary" href="">Crear cuenta</a>
