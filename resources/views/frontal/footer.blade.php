@@ -17,7 +17,7 @@
             <h5>Envíos</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="#">Condiciones de venta</a></li>
-                <li><a class="text-muted" href="#">Dónde estamos ?</a></li>
+                <li><a class="text-muted" href="{{url('ubicacion')}}">Dónde estamos ?</a></li>
                 <li><a class="text-muted" href="#"> por qué Monllar?</a></li>
             </ul>
         </div>
