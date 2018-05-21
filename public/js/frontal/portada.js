@@ -1,11 +1,13 @@
-//Jquery boton comprar
-$(document).ready(function mouse() {
-    $(document).on('mouseover', '.card', function () {
-        $(this).find(":button").show();
-    }).on('mouseout', '.card', function () {
-        $(this).find(":button").hide();
-    });
-});
+
+// cambiar el contorno de los productos
+
+function anadirColorContorno(producto){
+    producto.classList.add('contorno-rojo');
+}
+
+function eliminarColorContorno(producto) {
+    producto.classList.remove('contorno-rojo');
+}
 
 //Flexslider
 function GetUnique(e){
