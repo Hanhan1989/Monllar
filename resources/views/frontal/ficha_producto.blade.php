@@ -6,38 +6,29 @@
     <link href="{{ asset('css/frontal/ficha_producto.css') }}" rel="stylesheet">
 @endsection
 
-
-
 @section('content')
 
     <div class="row bzoom_wrap">
         <ul class="col-md-7" id="bzoom">
             <li>
-                <img class=" bzoom_thumb_image"
-                     src="https://www.ofertitas.es/wp-content/uploads/2016/05/zavvi-promocion-camiseta-pantalon-corto-mayo-2016.jpg"
-                     title="first img"/>
-                <img class=" bzoom_big_image"
-                     src="https://www.ofertitas.es/wp-content/uploads/2016/05/zavvi-promocion-camiseta-pantalon-corto-mayo-2016.jpg"/>
+                <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_1}}" title="first img"/>
+                <img class=" bzoom_big_image" src="{{$producto->path_imagen_1}}"/>
             </li>
             <li>
-                <img class=" bzoom_thumb_image"
-                     src="https://www.elcorteingles.es/sgfm/SGFM/contents/images/uploads/2018/03/5ab8b29196cab0fc4f408525.jpg"/>
-                <img class=" bzoom_big_image"
-                     src="https://www.elcorteingles.es/sgfm/SGFM/contents/images/uploads/2018/03/5ab8b29196cab0fc4f408525.jpg"/>
+                <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_2}}"/>
+                <img class=" bzoom_big_image" src="{{$producto->path_imagen_2}}"/>
             </li>
             <li>
-                <img class=" bzoom_thumb_image"
-                     src="https://www.ofertitas.es/wp-content/uploads/2017/01/tommy-hilfiger-organic-cotton-camiseta-casual-barata.jpg?w=640"/>
-                <img class=" bzoom_big_image"
-                     src="https://www.ofertitas.es/wp-content/uploads/2017/01/tommy-hilfiger-organic-cotton-camiseta-casual-barata.jpg?w=640"/>
+                <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_3}}"/>
+                <img class=" bzoom_big_image" src="{{$producto->path_imagen_3}}"/>
             </li>
 
         </ul>
 
         <div class="col-md-5">
-            <h3>{{$slug}}</h3>
+            <h3>{{ ucfirst($producto->nombre) }}</h3>
             <br>
-            <h4>Precio : &euro;79.00 - 90.00</h4>
+            <h4>Precio : {{$producto->precio}} €</h4>
             <br>
             <h5>Tamaño : </h5>
             <select class="selectpicker show-tick form-control col-md-6">
@@ -70,9 +61,7 @@
                 </span>
             </div>
             <br>
-            <a href="#" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-edit"></span> Comprar ahora</a>
-            <a href="#" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Añadir a
-                cesta</a>
+
         </div>
     </div>
     <br><br>
@@ -90,22 +79,11 @@
             <div class="tab-content">
                 <div id="homeTab" class="tab-pane active">
                     <h1>Descripción del producto</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at beatae consequuntur corporis cum
-                        debitis dolorum ducimus et eum illum impedit inventore iure libero mollitia nisi nobis non,
-                        nostrum nulla numquam obcaecati officia optio placeat provident quam quas quasi reprehenderit
-                        sapiente sint sunt temporibus totam velit veniam voluptate! Aliquam at aut, autem cum debitis
-                        deserunt dolorem dolores ea in, ipsum natus provident reiciendis sapiente similique sint
-                        voluptate voluptatem.</p>
+                    <p>{{$producto->descripcion}}</p>
                 </div>
                 <div id="contactTab" class="tab-pane">
                     <h1>Información adicional</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid illo ex maxime, odit aut
-                        laboriosam eum debitis minus hic, dolor illum impedit nam dicta voluptatem corrupti ratione
-                        placeat ad totam.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur incidunt veniam,
-                        cupiditate
-                        dolorem quod, facilis officia laudantium autem eius laboriosam consectetur nemo hic, illo
-                        quisquam, omnis dolores. Aspernatur, harum sequi?</p>
+                    <p>{{$producto->informacion_adicional}}</p>
                 </div>
             </div>
         </div>

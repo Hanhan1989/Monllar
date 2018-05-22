@@ -11,11 +11,11 @@ class ProductoController extends Controller
 
     public function listar($id_categoria)
     {
-        $productos = Producto::where('id_categoria', $id_categoria)
+        $producto = Producto::where('id_categoria', $id_categoria)
             ->orderBy('nombre', 'asc')
             ->paginate(10);
 
-        return view('frontal.lista_productos', compact('productos'));
+        return view('frontal.lista_productos', compact('producto'));
     }
 
     /**
@@ -24,9 +24,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        return view('frontal.ficha_producto', compact('slug'));
+
+        $producto = Producto::where('id', $id)->first();
+        return view('frontal.ficha_producto', compact('producto'));
     }
 
 
