@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Catalogo;
 
-class ProductoController extends Controller
+class CatalogoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('admin.producto');
+        return view('admin.catalogo');
     }
 
     /**
@@ -25,11 +24,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $data = [];
-        $catalogoCategorias = Catalogo::with('categorias')->get();
-        $data['catalogo_categorias'] = $catalogoCategorias;
-        
-        return view('admin.productoCreate', compact('data'));
+        //
     }
 
     /**
@@ -51,6 +46,7 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**

@@ -21,7 +21,11 @@ Route::get('/user/login', 'Frontal\UserController@login');
 Route::get('/user/registro', 'Frontal\UserController@registrarse');
 Route::get('/producto/{producto_id}', 'Frontal\ProductoController@show');
 Route::get('/producto/lista/{id_categoria}', 'Frontal\ProductoController@listar');
+
 Route::resource('admin/producto', 'Admin\ProductoController');
+Route::resource('admin/categoria', 'Admin\CategoriaController');
+Route::resource('admin/catalogo', 'Admin\CatalogoController');
+
 
 Auth::routes();
 
