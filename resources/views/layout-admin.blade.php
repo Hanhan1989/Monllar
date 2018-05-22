@@ -19,28 +19,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{url('producto/create')}}" id="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            AÑADIR PRODUCTO
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/producto')}}" >
+                            Producto
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            CAMBIAR PRECIOS
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{url('admin/catalogo')}}" >
+                            Catálogo
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            PEDIDOS
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                           FACTURAS
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{url('admin/categoria')}}">
+                            Categoría
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ACTUALIZAR DATOS USUARIO</a>
+                        <a class="nav-link" href="#">Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SALIR</a>
