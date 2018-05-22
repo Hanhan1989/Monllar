@@ -11,11 +11,11 @@ class ProductoController extends Controller
 
     public function listar($id_categoria)
     {
-        $producto = Producto::where('id_categoria', $id_categoria)
+        $productos = Producto::where('id_categoria', $id_categoria)
             ->orderBy('nombre', 'asc')
             ->paginate(10);
 
-        return view('frontal.lista_productos', compact('producto'));
+        return view('frontal.lista_productos', compact('productos'));
     }
 
     /**
