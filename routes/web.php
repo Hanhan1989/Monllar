@@ -19,7 +19,7 @@ Route::get('/admin/portada', 'Admin\PortadaController@index');
 
 Route::get('/user/login', 'Frontal\UserController@login');
 Route::get('/user/registro', 'Frontal\UserController@registrarse');
-Route::get('/producto/{producto_slug}', 'Frontal\ProductoController@show');
+Route::get('/producto/{producto_id}/{producto_slug}', 'Frontal\ProductoController@show');
 Route::get('/producto/lista/{id_categoria}', 'Frontal\ProductoController@listar');
 Route::resource('admin/producto', 'Admin\ProductoController');
 
