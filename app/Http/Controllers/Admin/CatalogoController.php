@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Catalogo;
 
 class CatalogoController extends Controller
 {
@@ -14,7 +15,8 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        return view('admin.catalogo');
+        $catalogos = Catalogo::all();
+        return view('admin.catalogo', compact('catalogos'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CatalogoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.catalogoCreate');
     }
 
     /**
