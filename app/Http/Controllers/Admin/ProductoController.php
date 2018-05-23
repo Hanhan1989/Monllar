@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Catalogo;
+use App\Model\Producto;
 
 class ProductoController extends Controller
 {
@@ -15,7 +16,10 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('admin.producto');
+        $productos = Producto::orderBy('id', 'desc')
+            ->paginate(15);
+
+        return view('admin.producto', compact('productos'));
     }
 
     /**
@@ -84,6 +88,9 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        Producto::find($id)->delete();
+        return redirect('/admin/producto');
+
     }
 }
