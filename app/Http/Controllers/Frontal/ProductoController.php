@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Frontal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Producto;
+use App\Model\Atributo;
+use Illuminate\Support\Facades\DB;
+
 
 class ProductoController extends Controller
 {
@@ -26,9 +29,12 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-
+        $atributos = DB::select('SELECT * FROM atributo_productos 
+		INNER JOIN atributos ON atributo_productos.id_atributo = atributos.id
+		INNER JOIN atributo_valors ON atributo_valors.id_atributo = atributos.id
+		WHERE atributo_productos.id_producto = ?', [319]);
         $producto = Producto::where('id', $id)->first();
-        return view('frontal.ficha_producto', compact('producto'));
+        return view('frontal.ficha_producto', compact('producto', 'atributos'));
     }
 
 
