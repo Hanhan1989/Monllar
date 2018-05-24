@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Producto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Catalogo;
@@ -42,33 +43,64 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        // validación de formulario, asegurarnos que es una imagen y no
-        // otro archivo
+        // validación de formulario, asegurar que se una imagen
         request()->validate([
             'nombre' => 'required',
-            'path_imagen_1'=> 'required|image',
-            'path_imagen_2'=> 'required|image',
-            'path_imagen_3'=> 'required|image',
+//            'path_imagen_1'=> 'required|image',
+//            'path_imagen_2'=> 'required|image',
+//            'path_imagen_3'=> 'required|image',
         ]);
 
         // Guardar las imagenes en public/media/images
-        if (Input::hasFile('path_imagen_1') || Input::hasFile('path_imagen_2') || Input::hasFile('path_imagen_3')){
-
+        if (Input::hasFile('path_imagen_1')) {
             $file1 = Input::file('path_imagen_1');
-            $fileName1 = microtime().$file1->getClientOriginalName();
+            $fileName1 = microtime() . $file1->getClientOriginalName();
+            $fileName1= str_replace(' ','-',$fileName1);
+            // echo('NOMBRE del fichero 1' . $fileName1);
             $file1->move('media/images', $fileName1);
-
-
-            $file2 = Input::file('path_imagen_2');
-            $fileName2 = microtime().$file2->getClientOriginalName();
-            $file2->move('media/images', $fileName2);
-
-
-            $file3 = Input::file('path_imagen_3');
-            $fileName3 = microtime().$file3->getClientOriginalName();
-            $file3->move('media/images', $fileName3);
-
         }
+
+        if (Input::hasFile('path_imagen_2')) {
+            $file2 = Input::file('path_imagen_2');
+            $fileName2 = microtime() . $file2->getClientOriginalName();
+            $fileName2= str_replace(' ','-',$fileName2);
+            $file2->move('media/images', $fileName2);
+        }
+
+        if (Input::hasFile('path_imagen_3')) {
+            $file3 = Input::file('path_imagen_3');
+            $fileName3 = microtime() . $file3->getClientOriginalName();
+            $fileName3= str_replace(' ','-',$fileName3);
+            $file3->move('media/images', $fileName3);
+        }
+
+        // quitar los espacios al nombre del producto
+        $nombre= str_replace(' ','-',$request->nombre);
+        echo('nombre con hifen '. $nombre);
+
+
+        Producto::create([
+            'id_categoria' => 1,
+            'nombre' => $request->nombre,
+            'slug' => $nombre,
+            'path_imagen_1' => $fileName1,
+            'path_imagen_2' => $fileName2,
+            'path_imagen_3' => $fileName3,
+            'path_imagen_4' => $fileName3,
+            'descripcion' => 'pantalon de prueba',
+            'informacion_adicional' => 'Este pantalón es muy bonito lo usó Shakira',
+            'precio' => 20,
+            'stock' => 30,
+
+        ]);
+
+//        return redirect()->route('producto.create')
+//            ->with('success', 'GUARDADO');
+
+
+//        Producto::create($request->all());
+//        return redirect()->route('producto.create')
+//            ->with('success', 'GUARDADO');
     }
 
     /**
@@ -77,7 +109,8 @@ class ProductoController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public
+    function show($id)
     {
     }
 
@@ -87,7 +120,8 @@ class ProductoController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public
+    function edit($id)
     {
         //
     }
@@ -99,7 +133,8 @@ class ProductoController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public
+    function update(Request $request, $id)
     {
         //
     }
@@ -110,7 +145,8 @@ class ProductoController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public
+    function destroy($id)
     {
         //
     }
