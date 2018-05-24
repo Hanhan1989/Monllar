@@ -25,6 +25,7 @@ Route::get('/producto/lista/{id_categoria}', 'Frontal\ProductoController@listar'
 Route::resource('admin/producto', 'Admin\ProductoController');
 Route::resource('admin/categoria', 'Admin\CategoriaController');
 Route::resource('admin/catalogo', 'Admin\CatalogoController');
+Route::resource('admin/atributo', 'Admin\AtributoController');
 
 
 Auth::routes();

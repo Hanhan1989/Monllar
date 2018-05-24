@@ -35,6 +35,11 @@
                             Categoría
                         </a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{url('admin/atributo')}}">
+                            Atributo
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Usuarios</a>
                     </li>
