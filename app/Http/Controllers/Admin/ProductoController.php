@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Catalogo;
 
+use  Illuminate\Support\Facades\Input;
+
 class ProductoController extends Controller
 {
     /**
@@ -28,25 +30,51 @@ class ProductoController extends Controller
         $data = [];
         $catalogoCategorias = Catalogo::with('categorias')->get();
         $data['catalogo_categorias'] = $catalogoCategorias;
-        
+
         return view('admin.productoCreate', compact('data'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        // validación de formulario, asegurarnos que es una imagen y no
+        // otro archivo
+        request()->validate([
+            'nombre' => 'required',
+            'path_imagen_1'=> 'required|image',
+            'path_imagen_2'=> 'required|image',
+            'path_imagen_3'=> 'required|image',
+        ]);
+
+        // Guardar las imagenes en public/media/images
+        if (Input::hasFile('path_imagen_1') || Input::hasFile('path_imagen_2') || Input::hasFile('path_imagen_3')){
+
+            $file1 = Input::file('path_imagen_1');
+            $fileName1 = microtime().$file1->getClientOriginalName();
+            $file1->move('media/images', $fileName1);
+
+
+            $file2 = Input::file('path_imagen_2');
+            $fileName2 = microtime().$file2->getClientOriginalName();
+            $file2->move('media/images', $fileName2);
+
+
+            $file3 = Input::file('path_imagen_3');
+            $fileName3 = microtime().$file3->getClientOriginalName();
+            $file3->move('media/images', $fileName3);
+
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -56,7 +84,7 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -67,8 +95,8 @@ class ProductoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -79,7 +107,7 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
