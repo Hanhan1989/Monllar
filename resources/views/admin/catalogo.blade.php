@@ -6,21 +6,24 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <a href="{{url('admin/catalogo/create')}}" class="float-right btn btn-info">Crear Catálogo </a><br><br>
+                <a href="{{url('admin/catalogo/create')}}" class="float-left btn btn-info">Crear Catálogo </a><br><br>
             </div>
         </div>
 
         <table class="table table-bordered table-hover">
-            <tr>
-                <td>Id</td>
-                <td>Nombre</td>
-                <td>Eliminar</td>
-                <td>Editar</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
             @foreach($catalogos as $catalogo)
 
                 <tr>
-                    <td>{{$catalogo->id}}</td>
+                    <th>{{$catalogo->id}}</th>
                     <td>{{$catalogo->nombre}}</td>
                     <td>
                         {!! Form::open(['method' => 'DELETE','route' => ['catalogo.destroy', $catalogo->id],'style'=>'display:inline']) !!}
@@ -31,6 +34,7 @@
                 </tr>
 
             @endforeach
+            </tbody>
         </table>
 
 @endsection
