@@ -4,12 +4,13 @@
 
 @section('css')
     <link href="{{ asset('css/frontal/ficha_producto.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
 @section('content')
 
-    <div class="row bzoom_wrap">
-        <ul class="col-md-7" id="bzoom">
+    <div class="row bzoom_wrap" >
+        <ul class="col-md-7 align-content-center" id="bzoom">
             <li>
                 <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_1}}" title="first img"/>
                 <img class=" bzoom_big_image" src="{{$producto->path_imagen_1}}"/>
@@ -27,8 +28,11 @@
 
         <div class="col-md-5">
             <h3>{{ ucfirst($producto->nombre) }}</h3>
+            <a href="javascript:print();" data-track-event-label="Print-Shelving-metal-point-2-colors-" data-track-event-category="Product-detail"><i class="fa fa-print" style="font-size:20px">Imprimir</i></a>
+
             <br>
             <h4>Precio : <span class="precio">{{$producto->precio}} €</span></h4>
+
             <div id="atributos">
                 @php
                     $atributo_id = "";
@@ -80,7 +84,7 @@
     <script type="text/javascript">
         $("#bzoom").zoom({
             // the width/height of the thumbnails
-            thumb_image_width: 600,
+            thumb_image_width: 575,
             thumb_image_height: 300,
             // the width/height of the zoomed image
             source_image_width: 2000,
