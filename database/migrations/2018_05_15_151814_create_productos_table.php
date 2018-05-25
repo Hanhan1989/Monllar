@@ -21,7 +21,8 @@ class CreateProductosTable extends Migration
             $table->string('path_imagen_1');
             $table->string('path_imagen_2');
             $table->string('path_imagen_3');
-            $table->string('path_imagen_4');
+            $table->integer('codigo_barras');
+            $table->integer('sku');
             $table->text('descripcion');
             $table->text('informacion_adicional');
             $table->double('precio', 8, 2);	

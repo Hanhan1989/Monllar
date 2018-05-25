@@ -21,7 +21,7 @@ class CreateCategoriasTable extends Migration
         });
 
         Schema::table('productos', function($table){
-            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
+            $table->foreign('id_categoria')->references('id')->on('categorias');
         });
     }
 

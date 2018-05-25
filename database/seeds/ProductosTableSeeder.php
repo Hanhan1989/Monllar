@@ -27,7 +27,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -46,7 +47,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -66,7 +68,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -86,7 +89,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -106,7 +110,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -126,7 +131,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -146,7 +152,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -166,7 +173,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -186,7 +194,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -206,7 +215,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -226,7 +236,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -246,7 +257,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -266,7 +278,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -286,7 +299,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
@@ -306,7 +320,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);  
@@ -327,7 +342,8 @@ class ProductosTableSeeder extends Seeder
                 'path_imagen_1' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_2' => $faker->imageUrl($width = 600, $height = 300),
                 'path_imagen_3' => $faker->imageUrl($width = 600, $height = 300),
-                'path_imagen_4' => $faker->imageUrl($width = 600, $height = 300),
+                'codigo_barras' => $faker->unique()->numberBetween($min = 0, $max = 2147483647),
+                'sku'=> $faker->unique()->numberBetween($min = 0, $max = 9999),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);    
