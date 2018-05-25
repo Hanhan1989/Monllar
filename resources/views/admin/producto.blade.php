@@ -10,16 +10,11 @@
 @section('content')
 
 
-    <div class="row">
-        <div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <a href="{{url('admin/producto/create')}}" class="float-left btn btn-info">Crear Producto </a><br><br>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row table-responsive-md">
+
+
+        <a href="{{url('admin/producto/create')}}" class="float-left btn btn-info">Crear Producto </a><br><br>
+
+    <div class="row table-responsive-md tabla">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>

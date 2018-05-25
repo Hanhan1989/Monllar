@@ -4,11 +4,9 @@
 
 @section('content')
 
-        <div class="row">
-            <div class="col-sm-12">
+
                 <a href="{{url('admin/catalogo/create')}}" class="float-left btn btn-info">Crear Catálogo </a><br><br>
-            </div>
-        </div>
+
 
         <table class="table table-bordered table-hover">
             <thead>
