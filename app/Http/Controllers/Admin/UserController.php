@@ -10,7 +10,7 @@ class UserController extends Controller
 
     public function login()
     {
-        return view('admin.user_login');
+        return redirect()->route('login');
     }
 
     public function validarLogin(Request $request){
