@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Atributo;
 
 class AtributoController extends Controller
 {
@@ -14,7 +15,8 @@ class AtributoController extends Controller
      */
     public function index()
     {
-        return view('admin.atributo');
+        $atributos = Atributo::all();
+        return view('admin.atributo', compact('atributos'));
     }
 
     /**
@@ -24,7 +26,7 @@ class AtributoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.atributoCreate');
     }
 
     /**
@@ -35,7 +37,8 @@ class AtributoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Atributo::create($request->all());
+        return redirect()->route('atributo.index');
     }
 
     /**
@@ -57,7 +60,9 @@ class AtributoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $atributo = Atributo::find($id);
+        $atributo_id = $atributo->id;
+        return view('admin.atributoCreate', compact('atributo','atributo_id'));
     }
 
     /**
@@ -69,7 +74,10 @@ class AtributoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $atributo = Atributo::find($id);
+        $atributo->nombre = $request->nombre;
+        $atributo->save();
+        return redirect()->route('atributo.index');
     }
 
     /**
@@ -80,6 +88,7 @@ class AtributoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Atributo::destroy($id);
+        return redirect()->route('atributo.index');
     }
 }
