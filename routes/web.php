@@ -22,6 +22,7 @@ Route::get('/user/registro', 'Frontal\UserController@registrarse')->middleware('
 
 Route::get('/producto/{producto_id}', 'Frontal\ProductoController@show');
 Route::get('/producto/lista/{id_categoria}', 'Frontal\ProductoController@listar');
+Route::get('/producto/json/{q}', 'Frontal\ProductoController@showProductoJson');
 
 Route::resource('admin/producto', 'Admin\ProductoController')->middleware('auth');
 Route::resource('admin/categoria', 'Admin\CategoriaController')->middleware('auth');

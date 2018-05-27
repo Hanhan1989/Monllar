@@ -18,3 +18,35 @@ var validator = new FormValidator('example_form', [ {
 
     }
 });
+
+// buscador ajax con Jquery
+
+function getSearchData(callback) {
+    var searchInput = document.getElementById('search');
+    searchInput.addEventListener('keyup', function (input) {
+        callback(input.srcElement.value);
+    }, false);
+}
+
+getSearchData(function (searchValue) {
+    var divBuscador = document.getElementById('productosBuscador');
+
+    if(searchValue.length >= 2){
+        $.getJSON( "/producto/json/" + searchValue, function( productos ){
+
+            var html = '';
+            productos.forEach(function (producto) {
+                html += '<div class="row" id="searchProductBlock">';
+                html += '<div class="col-sm-12 searchProduct">';
+                html += '<img class="searchProductImage" src="' + producto.path_imagen_1 + '">' + '<span class="searchProductName">' + producto.nombre + '</span>';
+                html += '</div>';
+                html += '</div>';
+            });
+
+            divBuscador.innerHTML = html;
+        });
+    }else{
+        divBuscador.innerHTML = '';
+    }
+
+});
