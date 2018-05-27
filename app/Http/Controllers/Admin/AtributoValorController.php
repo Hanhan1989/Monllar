@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Atributo;
+use App\Model\AtributoValor;
 
-class AtributoController extends Controller
+class AtributoValorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class AtributoController extends Controller
      */
     public function index()
     {
-        $atributos = Atributo::all();
-        return view('admin.atributo', compact('atributos'));
+        //
     }
 
     /**
@@ -24,9 +23,16 @@ class AtributoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.atributoCreate');
+        $id_atributo = $request->get('id_atributo');
+        $atributosValor = AtributoValor::where('id_atributo', $id_atributo)
+            ->orderBy('id', 'asc')->get();
+
+        $nombre_atributo = $request->get('nombre_atributo');
+
+
+        return view('admin.atributoValorCreate', compact('atributosValor', 'nombre_atributo', 'id_atributo'));
     }
 
     /**
@@ -37,8 +43,16 @@ class AtributoController extends Controller
      */
     public function store(Request $request)
     {
-        Atributo::create($request->all());
-        return redirect()->route('atributo.index');
+
+        $atributoValor = new AtributoValor();
+        $atributoValor->id_atributo = $request->id_atributo;
+        $atributoValor->valor = $request->valor;
+        $atributoValor->save();
+
+        $id_atributo = $request->get('id_atributo');
+        $nombre_atributo = $request->get('nombre_atributo');
+
+        return redirect('admin/atributovalor/create?id_atributo='.$id_atributo.'&nombre_atributo='.$nombre_atributo);
     }
 
     /**
@@ -60,9 +74,7 @@ class AtributoController extends Controller
      */
     public function edit($id)
     {
-        $atributo = Atributo::find($id);
-        $atributo_id = $atributo->id;
-        return view('admin.atributoCreate', compact('atributo','atributo_id'));
+        //
     }
 
     /**
@@ -74,10 +86,7 @@ class AtributoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $atributo = Atributo::find($id);
-        $atributo->nombre = $request->nombre;
-        $atributo->save();
-        return redirect()->route('atributo.index');
+        //
     }
 
     /**
@@ -86,9 +95,12 @@ class AtributoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        Atributo::destroy($id);
-        return redirect()->route('atributo.index');
+        $id_atributo = $request->get('id_atributo');
+        AtributoValor::destroy($id_atributo);
+        $nombre_atributo = $request->get('nombre_atributo');
+
+        return redirect('admin/atributovalor/create?id_atributo='.$id_atributo.'&nombre_atributo='.$nombre_atributo);
     }
 }
