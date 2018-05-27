@@ -37,5 +37,14 @@ class ProductoController extends Controller
         return view('frontal.ficha_producto', compact('producto', 'atributos'));
     }
 
+    public function showProductoJson($q)
+    {
+        $productos = DB::table('productos')
+            ->where('nombre', 'LIKE', '%'.$q.'%')
+            ->limit(10)
+            ->get();
+
+        return response()->json($productos);
+    }
 
 }
