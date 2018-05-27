@@ -17,9 +17,11 @@
         @foreach($atributos as $atributo)
             <tr>
                 <td>{{$atributo->id}}</td>
-                <td>{{$atributo->nombre}}</td>
                 <td>
-                    <a href="{{ route('atributovalor.create', ['id_atributo' => $atributo->id, 'nombre_atributo' => $atributo->nombre]) }}" class="btn btn-success">Añadir valor del atributo</a>
+                    <a href="{{ route('atributovalor.create', ['id_atributo' => $atributo->id, 'nombre_atributo' => $atributo->nombre]) }}">{{ucfirst($atributo->nombre)}}</a>
+                </td>
+                <td>
+                    <a href="{{ route('atributovalor.create', ['id_atributo' => $atributo->id, 'nombre_atributo' => $atributo->nombre]) }}" class="btn btn-info">Añadir valor del atributo</a>
 
                 </td>
                 <td>

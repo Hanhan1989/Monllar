@@ -95,10 +95,12 @@ class AtributoValorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id, Request $request)
     {
+        $id_atributo_valor = $id;
+        AtributoValor::destroy($id_atributo_valor);
+
         $id_atributo = $request->get('id_atributo');
-        AtributoValor::destroy($id_atributo);
         $nombre_atributo = $request->get('nombre_atributo');
 
         return redirect('admin/atributovalor/create?id_atributo='.$id_atributo.'&nombre_atributo='.$nombre_atributo);
