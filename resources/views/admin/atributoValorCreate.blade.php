@@ -25,11 +25,19 @@
         <tr>
             <th>Id</th>
             <th>Valor</th>
+            <th>Eliminar</th>
         </tr>
-        @foreach($atributosValor as $atributo)
+        @foreach($atributosValor as $atributovalor)
             <tr>
-                <td>{{$atributo->id}}</td>
-                <td>{{$atributo->valor}}</td>
+                <td>{{$atributovalor->id}}</td>
+                <td>{{$atributovalor->valor}}</td>
+                <td>
+                    {!! Form::open(['method' => 'DELETE','route' => ['atributovalor.destroy', $atributovalor->id],'style'=>'display:inline']) !!}
+                    {{Form::hidden('id_atributo', $id_atributo) }}
+                    {{Form::hidden('nombre_atributo', $nombre_atributo) }}
+                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!}
+                </td>
             </tr>
         @endforeach
 
