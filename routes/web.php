@@ -27,6 +27,8 @@ Route::resource('admin/producto', 'Admin\ProductoController')->middleware('auth'
 Route::resource('admin/categoria', 'Admin\CategoriaController')->middleware('auth');
 Route::resource('admin/catalogo', 'Admin\CatalogoController')->middleware('auth');
 Route::resource('admin/atributo', 'Admin\AtributoController')->middleware('auth');
+Route::resource('admin/atributovalor', 'Admin\AtributoValorController')->middleware('auth');
+
 
 
 Auth::routes();

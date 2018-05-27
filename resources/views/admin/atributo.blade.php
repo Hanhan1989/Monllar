@@ -10,6 +10,7 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
+            <th>Anadir Valor</th>
             <th>Eliminar</th>
             <th>Editar</th>
         </tr>
@@ -17,6 +18,10 @@
             <tr>
                 <td>{{$atributo->id}}</td>
                 <td>{{$atributo->nombre}}</td>
+                <td>
+                    <a href="{{ route('atributovalor.create', ['id_atributo' => $atributo->id, 'nombre_atributo' => $atributo->nombre]) }}" class="btn btn-success">Añadir valor del atributo</a>
+
+                </td>
                 <td>
                     {!! Form::open(['method' => 'DELETE','route' => ['atributo.destroy', $atributo->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
