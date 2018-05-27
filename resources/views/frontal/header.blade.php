@@ -39,9 +39,7 @@
             <a class="blog-header-logo text-dark" href="{{url('/')}}">Monllar</a>
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="btn btn-sm btn-outline-secondary" href="">Crear cuenta</a>
-            &nbsp;&nbsp;
-            <a class="btn btn-sm btn-outline-secondary" href="{{url('user/login')}}">Mi Cuenta</a>
+            <a class="btn btn-sm btn-outline-secondary" href="{{url('login')}}">Login Admin <img class="glyph-icon" src="{{asset('lib/glyph-iconset/svg/si-glyph-sign-in.svg')}}"></a>
         </div>
     </div>
 </header>
