@@ -15,12 +15,12 @@
 
     <div class="form-group">
         <label>Nombre</label>
-        {{Form::text('nombre', null, array('class' => 'form-control')) }}
+        {{Form::text('nombre', null, array('class' => 'form-control', 'required'=>'required')) }}
     </div>
 
     <div class="form-group">
         <label>Descripcion </label>
-        {{Form::text('descripcion', null, array('class' => 'form-control')) }}
+        {{Form::text('descripcion', null, array('class' => 'form-control', 'required'=>'required')) }}
     </div>
 
     @if(isset($atributo_id))
