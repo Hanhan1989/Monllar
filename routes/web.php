@@ -36,6 +36,10 @@ Route::resource('admin/user', 'Admin\UserController')->middleware('auth');
 Auth::routes();
 
 
+Route::get('/styletile', function () {
+    return view('frontal.estaticas.styletile');
+});
+
 Route::get('/politica_de_privacidad', function () {
     return view('frontal.estaticas.politica_privacidad');
 });
