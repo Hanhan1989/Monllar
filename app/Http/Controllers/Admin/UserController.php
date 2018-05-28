@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class UserController extends Controller
 {
@@ -35,7 +36,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = User::with('perfiles')->orderBy('id', 'desc')->paginate(10);
+        return view('admin.user', compact('usuarios'));
     }
 
     /**
@@ -101,6 +103,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return redirect('/admin/user');
     }
 }
