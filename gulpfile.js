@@ -10,9 +10,11 @@ elixir(function(mix) {
     mix.sass('frontal/user_login.scss', 'public/css/frontal/user_login.css');
     mix.sass('frontal/user_registro.scss', 'public/css/frontal/user_registro.css');
     mix.sass('frontal/lista_productos.scss', 'public/css/frontal/lista_productos.css');
+    mix.sass('frontal/styletile.scss', 'public/css/frontal/styletile.css');
     mix.sass('admin/portada.scss', 'public/css/admin/portada.css');
     mix.sass('admin/producto.scss', 'public/css/admin/producto.css');
     mix.sass('admin/user_login.scss', 'public/css/admin/user_login.css');
+    mix.sass('admin/categoria.scss', 'public/css/admin/categoria.css');
     mix.sass('admin/productoCreate.scss', 'public/css/admin/productoCreate.css');
     mix.typescript('monllar/Texto.ts', 'public/lib/monllar/Texto.js');
 });

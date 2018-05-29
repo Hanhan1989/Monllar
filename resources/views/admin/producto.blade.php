@@ -8,17 +8,20 @@
 @endsection
 
 @section('content')
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
 
-
-
-
-        <a href="{{url('admin/producto/create')}}" class="float-left btn btn-info">Crear Producto </a><br><br>
+    <a href="{{url('admin/producto/create')}}" class="float-left btn btn-info">Crear Producto </a><br><br>
 
     <div class="row table-responsive-md tabla">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
+                    <th scope="col">SKU</th>
                     <th scope="col">Nombre del producto  </th>
                     <th scope="col">Descripción</th>
                     <th scope="col">Imagen</th>
@@ -32,8 +35,9 @@
     @foreach($productos as $producto)
         <tr>
             <th >{{$producto->id}}</th>
-            <td >{{$producto->nombre}}</td>
-            <td>{{ str_limit($producto->descripcion, 30, '...')}}</td>
+            <th>{{$producto->sku}}</th>
+            <td style="width: 200px" >{{$producto->nombre}}</td>
+            <td style="width: 250px">{!! str_limit($producto->descripcion, 100, '...') !!}</td>
             <td><img class="img" src="{{$producto->path_imagen_1}}" width="175" height="100"></td>
             <td>{{$producto->created_at->format('Y-m-d')}}</td>
             <td>{!! Form::open(['method' => 'DELETE','route' => ['producto.destroy', $producto->id],'style'=>'display:inline']) !!}
