@@ -41,7 +41,7 @@ class ProductoController extends Controller
     {
         $productos = DB::table('productos')
             ->where('nombre', 'LIKE', '%'.$q.'%')
-            ->limit(10)
+            ->limit(5)
             ->get();
 
         return response()->json($productos);

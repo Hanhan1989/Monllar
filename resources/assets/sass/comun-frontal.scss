@@ -1,5 +1,8 @@
 /* stylelint-disable selector-list-comma-newline-after */
 
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:600');
+
+
 .blog-header {
   line-height: 1;
   border-bottom: 1px solid #e5e5e5;
@@ -41,6 +44,7 @@
   text-align: center;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+
 }
 
 .nav-scroller .nav-link {
@@ -66,4 +70,59 @@
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+
+/* ************ Buscador ************ */
+
+#search{
+  margin-right: 40px;
+}
+
+#productosBuscador{
+  position:absolute;
+  top: 120px;
+  width:500px;
+  height:450px;
+  right: 10%;
+  color: #835B21;
+  z-index: 1;
+  font-family: 'Work Sans', sans-serif;
+
+}
+.searchProductBlock{
+  background-color: white;
+
+}
+.searchProductBlock a{
+  color: #000;
+}
+
+.searchProductBlock a:hover{
+  color: cornflowerblue;
+}
+.searchProductImage{
+  width: 40%;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  float: left;
+  border-radius: 5%;
+}
+.searchProductImage:hover{
+  transform: scale(1.1)
+}
+
+
+.searchProductName{
+  width: 56%;
+  float: left;
+  padding-left: 40px;
+  font-size: 15px;
+
+}
+.searchProductPrice{
+  width: 56%;
+  float: left;
+  font-size: 15px;
+  padding-left: 40px;
 }

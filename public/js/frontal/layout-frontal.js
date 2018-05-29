@@ -36,9 +36,16 @@ getSearchData(function (searchValue) {
 
             var html = '';
             productos.forEach(function (producto) {
-                html += '<div class="row" id="searchProductBlock">';
-                html += '<div class="col-sm-12 searchProduct">';
+                html += '<div class="row searchProductBlock" >';
+               /* html += '<div class="col-sm-12 searchProduct">';
                 html += '<img class="searchProductImage" src="' + producto.path_imagen_1 + '">' + '<span class="searchProductName">' + producto.nombre + '</span>';
+                html += '</div>';*/
+                html += '<div class="col-sm-12 searchProduct">';
+                html += '<a href="/producto/' + producto.id + '">' +
+                    '<img class="searchProductImage" src="' + producto.path_imagen_1 + '">' +'<br>' +
+                    '<p class="searchProductName">' + producto.nombre + '</p>'+
+                    '<p class="searchProductPrice">'+producto.precio+' €' + '</p>' +
+                    '</a>';
                 html += '</div>';
                 html += '</div>';
             });
