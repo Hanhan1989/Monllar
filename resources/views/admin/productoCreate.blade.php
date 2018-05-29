@@ -28,28 +28,28 @@
 
                 <div class="form-group">
                     <label for="nombre_producto" class="control-label">Nombre del producto</label>
-                    <input type="text" class="form-control" id="full_name_id" name="nombre" placeholder="Pantalón"
+                    <input required type="text" class="form-control" id="full_name_id" name="nombre" placeholder="Pantalón"
                            autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="codigo-barras" class="control-label">Código de barras</label>
-                    <input type="number" class="form-control" name="codigo_barras">
+                    <input type="number" class="form-control" name="codigo_barras" required>
                 </div>
 
                 <div class="form-group">
                     <label for="sku" class="control-label">SKU</label>
-                    <input type="number" class="form-control"  name="sku">
+                    <input type="number" class="form-control"  name="sku" required>
                 </div>
 
                 <div class="form-group">
                     <label for="descripcion-producto" class="control-label">Descripción</label>
-                        <textarea class="form-control" name="descripcion" id="editor1" rows="10" cols="80"></textarea>
+                        <textarea class="form-control" name="descripcion" id="editor1" rows="10" cols="80" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for=" informacion_adicional" class="control-label">Información adicional</label>
-                    <textarea type="text" class="form-control" name="informacion_adicional" id="editor2" rows="10" cols="80"></textarea>
+                    <textarea type="text" class="form-control" name="informacion_adicional" id="editor2" rows="10" cols="80" required></textarea>
                 </div>
 
 
@@ -65,7 +65,7 @@
 
                 <div class="form-group">
                     <label for="catalogo" class="control-label">Catalogo</label>
-                    <select class="form-control" id="listaCatalogos" style="height:30px">
+                    <select required class="form-control" id="listaCatalogos" style="height:30px">
                         <option value="">seleccione una opción ...</option>
                         @foreach ($data['catalogo_categorias'] as $catalogo)
                         <option value="{{$catalogo->id}}"> {{$catalogo -> nombre}}<br>
