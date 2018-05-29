@@ -1,5 +1,5 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light menu-principal">
-        <a class="navbar-brand" href="#">Menú</a>
+        <a class="navbar-brand" href="{{url('/')}}">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,7 +19,6 @@
                         </div>
                     </li>
                 @endforeach
-
 
             </ul>
             <form class="form-group my-2 my-lg-0 col-md-6">

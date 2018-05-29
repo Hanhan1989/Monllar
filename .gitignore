@@ -16,3 +16,4 @@ yarn-error.log
 .env.example
 storage/framework/.DS_Store
 .history
+public/media
