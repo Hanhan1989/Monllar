@@ -12,16 +12,16 @@
     <div class="row bzoom_wrap" >
         <ul class="col-md-7 align-content-center" id="bzoom">
             <li>
-                <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_1}}" title="first img"/>
-                <img class=" bzoom_big_image" src="{{$producto->path_imagen_1}}"/>
+                <img class=" bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_1)}}" title="first img"/>
+                <img class=" bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_1)}}"/>
             </li>
             <li>
-                <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_2}}"/>
-                <img class=" bzoom_big_image" src="{{$producto->path_imagen_2}}"/>
+                <img class=" bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_2)}}"/>
+                <img class=" bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_2)}}"/>
             </li>
             <li>
-                <img class=" bzoom_thumb_image" src="{{$producto->path_imagen_3}}"/>
-                <img class=" bzoom_big_image" src="{{$producto->path_imagen_3}}"/>
+                <img class=" bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_3)}}"/>
+                <img class=" bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_3)}}"/>
             </li>
 
         </ul>
@@ -65,11 +65,11 @@
             <div class="tab-content">
                 <div id="homeTab" class="tab-pane active">
                     <h1>Descripción del producto</h1>
-                    <p>{{$producto->descripcion}}</p>
+                    <p>{!! $producto->descripcion !!}</p>
                 </div>
                 <div id="contactTab" class="tab-pane">
                     <h1>Información adicional</h1>
-                    <p>{{$producto->informacion_adicional}}</p>
+                    <p>{!! $producto->informacion_adicional !!}</p>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{{ asset('js/frontal/jqzoom.js') }}"></script>
     <script src="{{ asset('js/frontal/ficha_producto.js') }}"></script>
     <script type="text/javascript">

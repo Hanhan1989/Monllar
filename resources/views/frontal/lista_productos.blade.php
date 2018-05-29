@@ -14,11 +14,11 @@
             @foreach ($productos as $producto)
                 <div class="row" id="listar" onmouseover="anadirColorContorno(this)" onmouseleave="eliminarColorContorno(this)">
                     <div class="col-sm-5 box-shadow ">
-                        <img class="img-fluid" src="{{$producto->path_imagen_1}}" alt="image">
+                        <img class="img-fluid" src="{{asset('media/images/'.$producto->path_imagen_1)}}" alt="image">
                     </div>
                     <div class="col-sm-5">
                         <h4><a href="{{url('producto/'.$producto->id)}}">{{$producto->nombre}}</a></h4>
-                        <p class="d-flex card-text">{{ str_limit($producto->descripcion, 50, '...')}}</p>
+                        <p class="d-flex card-text">{!! str_limit($producto->descripcion, 50, '...') !!}</p>
                     </div>
                     <div class="col-sm-2">
                         <h4>Precio</h4>
