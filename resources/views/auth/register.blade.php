@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    {!! Form::open(['method' => 'POST','route' => ['user.store'], 'class'=>'form']) !!}
                         @csrf
 
                         <div class="form-group row">
@@ -66,8 +66,11 @@
                             <label for="id_perfil" class="col-md-4 col-form-label text-md-right">Perfil</label>
 
                             <div class="col-md-6">
-                                <select name="id_perfil">
-                                    <option value="1">Administrador</option>
+                                <select name="id_perfil" required="required">
+                                    <option value="">Seleccionar role</option>
+                                    @foreach($perfiles as $perfil)
+                                        <option value="{{$perfil->id}}">{{$perfil->perfil}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
