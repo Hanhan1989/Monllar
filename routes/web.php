@@ -30,6 +30,7 @@ Route::resource('admin/catalogo', 'Admin\CatalogoController')->middleware('auth'
 Route::resource('admin/atributo', 'Admin\AtributoController')->middleware('auth');
 Route::resource('admin/atributovalor', 'Admin\AtributoValorController')->middleware('auth');
 Route::resource('admin/user', 'Admin\UserController')->middleware('auth');
+Route::resource('admin/perfil', 'Admin\PerfilController')->middleware('auth');
 
 
 
