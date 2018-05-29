@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Categoria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Catalogo;
+
 
 class CategoriaController extends Controller
 {
@@ -14,7 +17,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        return view('admin.categoria');
+        $catalogos = $catalogoCategorias = Catalogo::with('categorias')->get();
+        return view('admin.categoria', compact('catalogos'));
 
     }
 
@@ -25,7 +29,9 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        $catalogos=Catalogo::all();
+
+        return view('admin.categoriaCreate',compact('catalogos'));
     }
 
     /**
@@ -36,7 +42,10 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Categoria::create($request->all());
+
+        return redirect('/admin/categoria')->with('success','GREAT!!!');
     }
 
     /**
@@ -58,7 +67,10 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria_id = $categoria->id;
+        $catalogos=Catalogo::all();
+        return view('admin.categoriaCreate', compact('categoria','categoria_id','catalogos'));
     }
 
     /**
@@ -70,7 +82,13 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $categoria = Categoria::find($id);
+        $categoria->nombre = $request->nombre;
+        $categoria->id_catalogo=$request->id_catalogo;
+        $categoria->save();
+        return redirect('/admin/categoria')->with('success','GREAT!!!');
+
     }
 
     /**
@@ -81,6 +99,7 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Categoria::find($id)->delete();
+        return redirect('/admin/categoria');
     }
 }
