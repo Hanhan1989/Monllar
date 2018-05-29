@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Model\Atributo;
+use App\Model\AtributoProducto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Catalogo;
 use App\Model\Producto;
+use App\Model\AtributoValor;
 
 use  Illuminate\Support\Facades\Input;
 
@@ -33,10 +36,11 @@ class ProductoController extends Controller
     public function create()
     {
         $data = [];
+        $atributos = [];
         $catalogoCategorias = Catalogo::with('categorias')->get();
+        $atributos = Atributo::all();
         $data['catalogo_categorias'] = $catalogoCategorias;
-
-        return view('admin.productoCreate', compact('data'));
+        return view('admin.productoCreate', compact('data', 'atributos'));
     }
 
     /**
@@ -50,56 +54,66 @@ class ProductoController extends Controller
         // validación de formulario, asegurar que se una imagen
         request()->validate([
             'nombre' => 'required',
-//            'path_imagen_1'=> 'required|image',
-//            'path_imagen_2'=> 'required|image',
-//            'path_imagen_3'=> 'required|image',
+            'path_imagen_1' => 'required|image',
+            'path_imagen_2' => 'required|image',
+            'path_imagen_3' => 'required|image',
+            'codigo_barras' => 'required',
+            'sku'  => 'required',
+            'precio' => 'required',
+            'stock'  => 'required',
         ]);
 
         // Guardar las imagenes en public/media/images
         if (Input::hasFile('path_imagen_1')) {
             $file1 = Input::file('path_imagen_1');
             $fileName1 = microtime() . $file1->getClientOriginalName();
-            $fileName1= str_replace(' ','-',$fileName1);
-            // echo('NOMBRE del fichero 1' . $fileName1);
+            $fileName1 = str_replace(' ', '-', $fileName1);
             $file1->move('media/images', $fileName1);
         }
 
         if (Input::hasFile('path_imagen_2')) {
             $file2 = Input::file('path_imagen_2');
             $fileName2 = microtime() . $file2->getClientOriginalName();
-            $fileName2= str_replace(' ','-',$fileName2);
+            $fileName2 = str_replace(' ', '-', $fileName2);
             $file2->move('media/images', $fileName2);
         }
 
         if (Input::hasFile('path_imagen_3')) {
             $file3 = Input::file('path_imagen_3');
             $fileName3 = microtime() . $file3->getClientOriginalName();
-            $fileName3= str_replace(' ','-',$fileName3);
+            $fileName3 = str_replace(' ', '-', $fileName3);
             $file3->move('media/images', $fileName3);
         }
 
         // quitar los espacios al nombre del producto
-        $nombre= str_replace(' ','-',$request->nombre);
-        echo('nombre con hifen '. $nombre);
+        $slug = str_replace(' ', '-', $request->nombre);
 
+        $producto = new Producto;
+        $producto->id_categoria = $request->id_categoria;
+        $producto->nombre = $request->nombre;
+        $producto->slug = $slug;
+        $producto->path_imagen_1 = $fileName1;
+        $producto->path_imagen_2 = $fileName2;
+        $producto->path_imagen_3 = $fileName3;
+        $producto->codigo_barras = $request->codigo_barras;
+        $producto->sku = $request->sku;
+        $producto->descripcion = $request->descripcion;
+        $producto->informacion_adicional = $request->informacion_adicional;
+        $producto->precio = $request->precio;
+        $producto->stock = $request->stock;
 
-        Producto::create([
-            'id_categoria' => 1,
-            'nombre' => $request->nombre,
-            'slug' => $nombre,
-            'path_imagen_1' => $fileName1,
-            'path_imagen_2' => $fileName2,
-            'path_imagen_3' => $fileName3,
-            'path_imagen_4' => $fileName3,
-            'descripcion' => 'pantalon de prueba',
-            'informacion_adicional' => 'Este pantalón es muy bonito lo usó Shakira',
-            'precio' => 20,
-            'stock' => 30,
+        $producto->save();
 
-        ]);
+        $last_id_producto = $producto->id;
+        foreach ($request->atributo as $valor) {
+            $atributoProducto = new AtributoProducto;
+            $atributoProducto->id_producto = $last_id_producto;
+            $atributoProducto->id_atributo = $valor;
+            $atributoProducto->save();
+        }
 
-//        return redirect()->route('producto.create')
-//            ->with('success', 'GUARDADO');
+        return redirect()->route('producto.index')
+            ->with('success', 'Producto guardado correctamente');
 
 
 //        Producto::create($request->all());
