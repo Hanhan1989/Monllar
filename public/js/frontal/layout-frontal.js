@@ -53,3 +53,8 @@ getSearchData(function (searchValue) {
     }
 
 });
+
+$( "#search" ).on('focusout mouseout',function () {
+    var divBuscador = document.getElementById('productosBuscador');
+    divBuscador.innerHTML = '';
+});
