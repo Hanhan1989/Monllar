@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Model\Perfil;
+
 
 class UserController extends Controller
 {
@@ -47,7 +50,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $perfiles = Perfil::all();
+        return view('auth.register', compact('perfiles'));
     }
 
     /**
@@ -58,7 +62,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $elUsuarioExiste = User::where('email', $request->email)->first();
+
+        if(!$elUsuarioExiste){
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'id_perfil' => $request->id_perfil
+            ]);
+        }
+
+        return redirect()->route('user.index');
     }
 
     /**

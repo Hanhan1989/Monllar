@@ -2,7 +2,11 @@
 
 @section('title', 'Backoffice Monllar ')
 
+
 @section('content')
+
+    <a href="{{url('/admin/user/create')}}" class="float-left btn btn-info">Añadir nuevo usuarios </a><br><br>
+
     <table class="table table-hover table-bordered">
         <tr>
             <th>Id</th>
