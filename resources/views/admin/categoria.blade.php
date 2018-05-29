@@ -36,3 +36,11 @@
 
 
 @endsection
+
+@section('javascript')
+    <script src="{{asset('js/admin/helpers.js')}}"></script>
+
+    <script>
+        quitarLaFuncionalidadEnviarDelBotonEliminar();
+    </script>
+@endsection
