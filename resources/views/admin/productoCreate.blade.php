@@ -100,6 +100,10 @@
 @endsection
 
 @section('javascript')
+    <script>
+        var catalogos = JSON.parse('{!! $data['catalogo_categorias'] !!}');
+    </script>
+
     <script src="{{ asset('js/admin/producto_create.js') }}"></script>
     <script src="{{ asset('lib/modernizr.min.js') }}"></script>
     <script src="{{ asset('lib/uploadHBR.min.js') }}"></script>
