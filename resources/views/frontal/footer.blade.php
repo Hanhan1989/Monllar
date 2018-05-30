@@ -34,9 +34,9 @@
         <div class="col-6 col-md">
             <h5>Sobre nosotros</h5>
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Team</a></li>
-                <li><a class="text-muted" href="#">Locations</a></li>
-                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="{{url('/team')}}">Team</a></li>
+                <li><a class="text-muted" href="{{url('/ubicacion')}}">Locations</a></li>
+                <li><a class="text-muted" href="{{url('/politica_de_privacidad')}}">Privacy</a></li>
                 <li><a class="text-muted" href="#">Terms</a></li>
             </ul>
         </div>
