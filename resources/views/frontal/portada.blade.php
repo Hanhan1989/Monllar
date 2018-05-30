@@ -19,31 +19,26 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="first-slide" src="http://via.placeholder.com/1140x450" alt="First slide">
+                    <img class="first-slide" src="{{asset('media/images/portada11.jpg')}}" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption text-left">
-                            <h1>1.Eslogan</h1>
-                            <p>Descripcion de lo que se ofrecen.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Comprar</a></p>
+                            <h1>Abrigos de primavera</h1>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="second-slide" src="http://via.placeholder.com/1140x450" alt="Second slide">
+                    <img class="second-slide" src="{{asset('media/images/portada12.jpg')}}" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>2.Eslogan</h1>
-                            <p>Descripcion de lo que se ofrecen.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Ver mas</a></p>
+                            <h1>Zapatos</h1>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="third-slide" src="http://via.placeholder.com/1140x450" alt="Third slide">
+                    <img class="third-slide" src="{{asset('media/images/portada13.jpg')}}" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption text-right">
-                            <h1>3.Eslogan</h1>
-                            <p>>Descripcion de lo que se ofrecen.</p>
+                            <h1>Trajes</h1>
                             <p><a class="btn btn-lg btn-primary" href="#" role="button">Novedades</a></p>
                         </div>
                     </div>
@@ -69,7 +64,7 @@
                         <img class="card-img-top" src="{{asset('media/images/'.$producto->path_imagen_1)}}" alt="Card image cap">
                         <div class="card-body">
                             <h4><a href="{{url('producto/'.$producto->id)}}">{{$producto->nombre}}</a></h4>
-                            <p class="d-flex card-text">{{ str_limit($producto->descripcion, 100, '...')}}</p>
+                            <p class="d-flex card-text">{!!  str_limit($producto->descripcion, 100, '...') !!}</p>
                             <div class="text-center">
                                 <div class="precio ">PRECIO
                                     <span>{{$producto->precio}} €</span>
