@@ -1,0 +1,6 @@
+# imagen propia del apache con php
+
+FROM hanhan/apache_php:7.1.15
+
+# Eliminar apache2.pid por si aparecen problemas del tipo "httpd (pid 7) already running"
+RUN rm -f /var/run/apache2/apache2.pid
