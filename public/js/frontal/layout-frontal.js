@@ -39,7 +39,7 @@ getSearchData(function (searchValue) {
                 html += '<div class="row searchProductBlock" >';
                 html += '<div class="col-sm-12 searchProduct">';
                 html += '<a href="/producto/' + producto.id + '">' +
-                    '<img class="searchProductImage" src="' + producto.path_imagen_1 + '">' +'<br>' +
+                    '<img class="searchProductImage" src="public/media/images/' + producto.path_imagen_1 + '">' +'<br>' +
                     '<p class="searchProductName">' + producto.nombre + '</p>'+
                     '<p class="searchProductPrice">'+producto.precio+' €' + '</p>' +
                     '</a>';
@@ -54,7 +54,7 @@ getSearchData(function (searchValue) {
 
 });
 
-$( "#search" ).on('focusout mouseout',function () {
+$( "#search" ).on('focusout',function () {
     var divBuscador = document.getElementById('productosBuscador');
     divBuscador.innerHTML = '';
 });
