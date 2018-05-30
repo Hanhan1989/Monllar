@@ -39,7 +39,7 @@ getSearchData(function (searchValue) {
                 html += '<div class="row searchProductBlock" >';
                 html += '<div class="col-sm-12 searchProduct">';
                 html += '<a href="/producto/' + producto.id + '">' +
-                    '<img class="searchProductImage" src="public/media/images/' + producto.path_imagen_1 + '">' +'<br>' +
+                    '<img class="searchProductImage" src="'+window.location.origin+'/media/images/' + producto.path_imagen_1 + '">' +'<br>' +
                     '<p class="searchProductName">' + producto.nombre + '</p>'+
                     '<p class="searchProductPrice">'+producto.precio+' €' + '</p>' +
                     '</a>';
