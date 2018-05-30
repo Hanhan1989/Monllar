@@ -14,7 +14,7 @@
             <!-- Section heading -->
             <h2 class="h1-responsive font-weight-bold my-5">Nuestro equipo</h2>
             <!-- Section description -->
-            <p class="grey-text w-responsive mx-auto mb-5">Equipo desarollador  del Proyedto Monllar.</p>
+            <p class="grey-text w-responsive mx-auto mb-5">Equipo desarollador  del Proyecto Monllar.</p>
 
             <!-- Grid row -->
             <div class="row">
