@@ -64,11 +64,11 @@
             </ul>
             <div class="tab-content">
                 <div id="homeTab" class="tab-pane active">
-                    <h1>Descripción del producto</h1>
+                    <br>
                     <p>{!! $producto->descripcion !!}</p>
                 </div>
                 <div id="contactTab" class="tab-pane">
-                    <h1>Información adicional</h1>
+                    <br>
                     <p>{!! $producto->informacion_adicional !!}</p>
                 </div>
             </div>
