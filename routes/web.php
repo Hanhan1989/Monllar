@@ -48,3 +48,7 @@ Route::get('/politica_de_privacidad', function () {
 Route::get('/ubicacion', function () {
     return view('frontal.estaticas.ubicacion');
 });
+
+Route::get('/team', function () {
+    return view('frontal.estaticas.team');
+});
