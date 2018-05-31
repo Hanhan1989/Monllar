@@ -55,7 +55,9 @@ getSearchData(function (searchValue) {
 
 });
 
-$( "#search" ).on('focusout',function () {
+
+
+$( '.container' ).on('click',function () {
     var divBuscador = document.getElementById('productosBuscador');
     divBuscador.style.height = '0px';
     divBuscador.innerHTML = '';
