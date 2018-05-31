@@ -1,6 +1,6 @@
 @extends('layout-frontal')
 
-@section('title', 'Ubicacion')
+@section('title', 'Style Tiles')
 
 @section('css')
     <link href="{{ asset('css/frontal/styletile.css') }}" rel="stylesheet">
