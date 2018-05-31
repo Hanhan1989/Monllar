@@ -2,7 +2,7 @@
     <div class="row flex-nowrap justify-content-between align-items-center">
         
         <div class="col-md-1 col-3 logo">
-            <a class="blog-header-logo text-dark" href="{{url('/')}}"><img src="media/images/logo.png" alt=""></a>
+            <a class="blog-header-logo text-dark" href="{{url('/')}}"><img src="{{asset('media/images/logo.png')}}" alt=""></a>
         </div>
         <div class="col-md-9 col-4 text-center spacelogo">
             <a class="blog-header-logo text-dark" href="{{url('/')}}">Monllar</a>
