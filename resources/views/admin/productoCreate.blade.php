@@ -68,9 +68,8 @@
                     <select class="form-control" id="listaCatalogos" style="height:30px">
                         <option value="">seleccione una opción ...</option>
                         @foreach ($data['catalogo_categorias'] as $catalogo)
-                        <option value="{{$catalogo->id}}"> {{$catalogo -> nombre}}<br>
+                        <option value="{{$catalogo->id}}"> {{$catalogo -> nombre}}</option>
                     @endforeach
-                        </option>
                     </select>
                 </div>
                 <div  class="form-group" id="seccionCategorias"></div>
