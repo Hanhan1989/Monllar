@@ -18,7 +18,7 @@
         <div class="col-md-4 stylelogo sb1">
             <h1>Logo</h1>
             <hr>
-            <img src="media/images/logo.png" alt="">
+            <img src="{{asset('media/images/logo.png')}}" alt="">
         </div>
         <div class="col-md-4 sb1">
             <h1>Web Site</h1>
