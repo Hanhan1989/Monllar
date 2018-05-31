@@ -69,25 +69,25 @@
                 <div class="col-md-12"><br>
                     <h3>Imagenes</h3>
                     <div class=" img">
-                        <img src="media/images/sudadera.jpg" alt="Camiseta Hombre">
+                        <img src="{{asset('media/images/sudadera.jpg')}}" alt="Camiseta Hombre">
                     </div>
                     <div class="img">
-                        <img src="media/images/camiseta-skull.jpg" alt="CRocksir craneo">
+                        <img src="{{asset('media/images/camiseta-skull.jpg')}}" alt="CRocksir craneo">
                     </div>
                     <div class="img">
-                        <img src="media/images/camiseta-mujer.jpg" alt="Camiseta de verano mujer">
+                        <img src="{{asset('media/images/camiseta-mujer.jpg')}}" alt="Camiseta de verano mujer">
                     </div>
                     <div class="txt2"> Chaqueta de invierno Hombre </div>
                     <div class="txt2"> Rocksir cráneo</div>
                     <div class="txt2"> Camiseta de verano Mujer</div>
                     <div class="img">
-                        <img src="media/images/camiseta-mujer-top.jpg" alt="Camiseta de verano Top mujer">
+                        <img src="{{asset('media/images/camiseta-mujer-top.jpg')}}" alt="Camiseta de verano Top mujer">
                     </div>
                     <div class="img">
-                        <img src="media/images/camiseta-nino-spiderman.jpg" alt="Camiseta de Spiderman">
+                        <img src="{{asset('media/images/camiseta-nino-spiderman.jpg')}}" alt="Camiseta de Spiderman">
                     </div>
                     <div class="img">
-                        <img src="media/images/mameluco-bug-bunny.jpg" alt="Mameluco de Bug Bunny">
+                        <img src="{{asset('media/images/mameluco-bug-bunny.jpg')}}" alt="Mameluco de Bug Bunny">
                     </div>
                     <div class="txt2"> Camiseta de verano Top </div>
                     <div class="txt2"> Camiseta de Spiderman</div>
