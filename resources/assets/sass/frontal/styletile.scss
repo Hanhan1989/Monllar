@@ -1,0 +1,115 @@
+/**** Color bordes sb = styleborder****/
+.styleborder{
+  border-top: 1px solid darkgray;
+  border-left: 1px solid darkgray;
+}
+
+.sb1{
+  border-right: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+}
+.sb2{
+  border-bottom: 1px solid darkgray;
+}
+
+/**** Tamaño de Imagen  ****/
+.stylelogo img{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/**** Colores  ****/
+
+.colores{
+  padding-bottom: 20px;
+}
+.colores span{
+  float: left;
+}
+.color1 {
+  width: 120px;
+  height: 50px;
+  -moz-border-radius: 0 50% / 0 100%;
+  -webkit-border-radius: 0 50% / 0 100%;
+  border-radius: 0 50% / 0 100%;
+  background: darkgray;
+  border: 3px solid #555;
+  float: left;
+}
+
+.color2 {
+  width: 120px;
+  height: 50px;
+  float: left;
+  -moz-border-radius: 0 50% / 0 100%;
+  -webkit-border-radius: 0 50% / 0 100%;
+  border-radius: 0 50% / 0 100%;
+  background: white;
+  border: 3px solid #555;
+}
+
+.color3 {
+  width: 120px;
+  height: 50px;
+  float: left;
+  -moz-border-radius: 0 50% / 0 100%;
+  -webkit-border-radius: 0 50% / 0 100%;
+  border-radius: 0 50% / 0 100%;
+  background: black;
+  border: 3px solid #555;
+}
+
+.color4 {
+  width: 120px;
+  height: 50px;
+  float: left;
+  -moz-border-radius: 0 50% / 0 100%;
+  -webkit-border-radius: 0 50% / 0 100%;
+  border-radius: 0 50% / 0 100%;
+  background: cornflowerblue;
+  border: 3px solid #555;
+}
+
+.txt1{
+  width: 125px;
+  height: 50px;
+  padding: 15px;
+  text-align: center;
+  float: left;
+}
+
+/**** Imagenes ****/
+
+.img{
+  float: left;
+}
+.img img{
+  width: 170px;
+  height: 150px;
+}
+
+.txt2{
+  width: 170px;
+  height: 50px;
+  padding: 15px;
+  padding-bottom: 50px;
+  text-align: center;
+  float: left;
+}
+
+
+/*** Botones ***/
+.botones>.btn{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 10px;
+}
+
+
+/*** Texto ***/
+
+.texto p{
+  font-size: 15px;
+}
