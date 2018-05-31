@@ -18,7 +18,7 @@
         <div class="col-md-4 stylelogo sb1">
             <h1>Logo</h1>
             <hr>
-            <img src="https://pre00.deviantart.net/d9bc/th/pre/f/2014/162/a/e/minus_militia_logo_by_kiowa213-d7m09kc.png" alt="">
+            <img src="media/images/logo.png" alt="">
         </div>
         <div class="col-md-4 sb1">
             <h1>Web Site</h1>
@@ -69,25 +69,25 @@
                 <div class="col-md-12"><br>
                     <h3>Imagenes</h3>
                     <div class=" img">
-                        <img src="https://bit.ly/2Jf389Y" alt="Camiseta Hombre">
+                        <img src="media/images/sudadera.jpg" alt="Camiseta Hombre">
                     </div>
                     <div class="img">
-                        <img src="https://bit.ly/2J1c0wp" alt="CRocksir craneo">
+                        <img src="media/images/camiseta-skull.jpg" alt="CRocksir craneo">
                     </div>
                     <div class="img">
-                        <img src="https://bit.ly/2L5xI3e" alt="Camiseta de verano mujer">
+                        <img src="media/images/camiseta-mujer.jpg" alt="Camiseta de verano mujer">
                     </div>
                     <div class="txt2"> Chaqueta de invierno Hombre </div>
                     <div class="txt2"> Rocksir cráneo</div>
                     <div class="txt2"> Camiseta de verano Mujer</div>
                     <div class="img">
-                        <img src="https://bit.ly/2xrmGDj" alt="Camiseta Hombre">
+                        <img src="media/images/camiseta-mujer-top.jpg" alt="Camiseta de verano Top mujer">
                     </div>
                     <div class="img">
-                        <img src="https://bit.ly/2spw6cQ" alt="Camiseta Hombre">
+                        <img src="media/images/camiseta-nino-spiderman.jpg" alt="Camiseta de Spiderman">
                     </div>
                     <div class="img">
-                        <img src="https://bit.ly/2skiikF" alt="Camiseta Hombre">
+                        <img src="media/images/mameluco-bug-bunny.jpg" alt="Mameluco de Bug Bunny">
                     </div>
                     <div class="txt2"> Camiseta de verano Top </div>
                     <div class="txt2"> Camiseta de Spiderman</div>
