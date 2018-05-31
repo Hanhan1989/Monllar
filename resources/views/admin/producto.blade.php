@@ -44,7 +44,7 @@
                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
             </td>
-            <td><button type="button" class="btn btn-success">Editar</button></td>
+            <td>  <a class="btn btn-primary" href="{{ route('producto.edit',$producto->id) }}">Editar</a></td>
         </tr>
     @endforeach
             </tbody>
