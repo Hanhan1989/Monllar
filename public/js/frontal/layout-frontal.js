@@ -30,6 +30,7 @@ function getSearchData(callback) {
 
 getSearchData(function (searchValue) {
     var divBuscador = document.getElementById('productosBuscador');
+    divBuscador.style.height = '450px';
 
     if(searchValue.length >= 2){
         $.getJSON( "/producto/json/" + searchValue, function( productos ){
@@ -56,5 +57,6 @@ getSearchData(function (searchValue) {
 
 $( "#search" ).on('focusout',function () {
     var divBuscador = document.getElementById('productosBuscador');
+    divBuscador.style.height = '0px';
     divBuscador.innerHTML = '';
 });
