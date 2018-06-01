@@ -11,7 +11,6 @@ describe('Página del Formulario de Autenticación Backoffice', function () {
         LoginPage.clicarElBotonEnviar();
 
         expect(MenubackofficePage.enlaceLogout.getText()).to.equal('Logout');
-        //expect(MenubackofficePage.enlaceLogout.getText()).to.equal('Logout');
     });
 
 });
