@@ -7,7 +7,7 @@ class LoginPage extends Pagina{
     get botonEnviar(){ return browser.element('button[type=submit]');}
 
     abrir(){
-        super.abrir('http://local.monllar.com/login');
+        super.abrir('http://www.monllar.com/login');
     }
 
     ponerEmail(){
