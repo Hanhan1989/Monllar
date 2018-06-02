@@ -15,7 +15,7 @@ o sea para inicializar el servicio Selenium usaremos
 
 ````
 // Descargar el chromedriver 
-npm run selenium-standalone install --drivers.chrome.version=2.17 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com
+npm run selenium install --drivers.chrome.version=2.17 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com
 
 // Iniciar el servicio selenium 
 npm run selenium start

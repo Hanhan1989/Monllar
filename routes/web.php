@@ -52,3 +52,10 @@ Route::get('/ubicacion', function () {
 Route::get('/team', function () {
     return view('frontal.estaticas.team');
 });
+
+Route::get('/terms', function () {
+    return view('frontal.estaticas.terms');
+});
+Route::get('/contact', function () {
+    return view('frontal.estaticas.contact');
+});
