@@ -9,13 +9,13 @@
             <h5>Envíos</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="{{url('/ubicacion')}}">Dónde estamos ?</a></li>
-                <li><a class="text-muted" href="#"> por qué Monllar?</a></li>
+                <li><a class="text-muted" href="{{url('/conocenos')}}">Que somos?</a></li>
             </ul>
         </div>
         <div class="col-6 col-md">
             <h5>Información</h5>
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Preguntas frecuentes</a></li>
+                <li><a class="text-muted" href="{{url('/terms')}}">términos y condiciones de uso</a></li>
                 <li><a class="text-muted" href="{{url('/contact')}}">Contacto</a></li>
             </ul>
         </div>
@@ -24,7 +24,7 @@
             <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="{{url('/team')}}">Team</a></li>
                 <li><a class="text-muted" href="{{url('/politica_de_privacidad')}}">Privacy</a></li>
-                <li><a class="text-muted" href="{{url('/terms')}}">términos y condiciones de uso</a></li>
+
             </ul>
         </div>
     </div>

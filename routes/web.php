@@ -59,3 +59,6 @@ Route::get('/terms', function () {
 Route::get('/contact', function () {
     return view('frontal.estaticas.contact');
 });
+Route::get('/conocenos', function () {
+    return view('frontal.estaticas.que_somos');
+});
