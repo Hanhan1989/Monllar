@@ -201,7 +201,7 @@ class ProductoController extends Controller
 
         $slug = str_replace(' ', '-', $request->nombre);
 
-        $producto= \App\model\Producto::find($id);
+        $producto = Producto::find($id);
 
         $producto->id_categoria = $request->id_categoria;
         $producto->nombre=$request->nombre;
