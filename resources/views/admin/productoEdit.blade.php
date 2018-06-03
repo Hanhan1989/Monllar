@@ -4,9 +4,11 @@
 
 @section('css')
     <link href="{{ asset('css/admin/productoCreate.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        img{
+            max-width:180px;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -22,82 +24,91 @@
         </div>
     @endif
 
-    {!! Form::model($producto, ['method' => 'PATCH','route' => ['producto.update', $producto->id]]) !!}
+    {!! Form::model($data['producto_actual'], ['method' => 'PATCH','route' => ['producto.update', $data['producto_actual']->id], 'files'=>true]) !!}
 
     <div class="form-group">
         {!! Form::label('nombre_producto', 'Nombre del producto') !!}
-        {!! Form::text('nombre', $producto->nombre, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('nombre', null, ['class' => 'form-control', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('codigo_barras', 'Código de barras') !!}
-        {!! Form::number('codigo_barras', $producto->codigo_barras, ['class' => 'form-control', 'required']) !!}
+        {!! Form::number('codigo_barras', null,  ['class' => 'form-control', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('sku', 'SKU') !!}
-        {!! Form::number('sku', $producto->sku, ['class' => 'form-control', 'required']) !!}
+        {!! Form::number('sku',null, ['class' => 'form-control', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('descripcion', 'Descripción') !!}
-        {!! Form::textarea('descripcion', $producto->descripcion,  ['class' => 'form-control','id'=>'editor1', 'required']) !!}
+        {!! Form::textarea('descripcion', null,  ['class' => 'form-control','id'=>'editor1', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('informacion_adicional', 'Información adicional') !!}
-        {!! Form::textarea('informacion_adicional', $producto->informacion_adicional, ['class' => 'form-control', 'id'=>'editor2', 'required']) !!}
+        {!! Form::textarea('informacion_adicional', null, ['class' => 'form-control', 'id'=>'editor2', 'required']) !!}
     </div>
 
-
     <div class="form-group">
-        <label for="precio" class="control-label">Precio</label>
-        <input type="number" value="{{$producto->precio}}" class="form-control" name="precio" placeholder="19.99" step="0.01">
+        {!! Form::label('Precio', 'Precio') !!}
+        {!! Form::text('precio', null, ['class' => 'form-control', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('stock', 'Unidades') !!}
-        {!! Form::number('stock', $producto->stock, ['class' => 'form-control', 'required']) !!}
+        {!! Form::number('stock', null, ['class' => 'form-control', 'required']) !!}
     </div>
 
-
     <div class="form-group">
-        <label for="catalogo" class="control-label">Catalogo</label>
-        <select class="form-control" id="listaCatalogos" style="height:30px">
-            <option value="">seleccione una opción ...</option>
-            @foreach ($data['catalogo_categorias'] as $catalogo)
-                <option value="{{$catalogo->id}}">{{ $catalogo -> nombre}} </option>
+        <label>Catálogo</label>
+        <select name="catalogo" class="form-control" id="listaCatalogos" required>
+            <option value="">Seleccionar opción </option>
+            @foreach($data['catalogo_categorias'] as $categoria)
+                @if($data['categoria_actual']->id_catalogo === $categoria->id)
+                    <option value="{{$categoria->id}}" selected>{{$categoria->nombre}}</option>
+                @else
+                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                @endif
             @endforeach
         </select>
     </div>
 
     <div  class="form-group" id="seccionCategorias"></div>
 
+
     <div class="form-group">
         <label for="atributos" class="control-label">Atributos</label><br/>
-        @foreach ($atributos as $atributo)
-            @if(in_array($atributo -> id, $atributosDB))
-                <input type="checkbox"  value="{{$atributo -> id}}" name="atributo[]" checked> {{$atributo -> nombre}}<br>
+        @foreach ($data['atributos'] as $atributo)
+            @if(in_array($atributo->id, $array_atributos))
+                <input type="checkbox" value="{{$atributo -> id}}" name="atributo[]" checked> {{$atributo -> nombre}}<br>
             @else
-                <input type="checkbox"  value="{{$atributo -> id}}" name="atributo[]"> {{$atributo -> nombre}}<br>
+                <input type="checkbox" value="{{$atributo -> id}}" name="atributo[]"> {{$atributo -> nombre}}<br>
             @endif
         @endforeach
     </div>
 
-    {{--<div class="form-group" id="columns" class="control-label" style="border: 1px ; height: 150px">--}}
-        {{--<label for="cuadro_upload" class="control-label">Buscar imagenes del producto</label>--}}
-        {{--<div class="desc"><span></span></div>--}}
-        {{--<div id="uploads"><!-- Upload Content --></div>--}}
-    {{--</div>--}}
+   <div class="form-group">
+       <label class="control-label">Imagen principal</label><br>
+       <img id="blah0" src="{{asset('media/images/'.$data['producto_actual']->path_imagen_1)}}" alt="your image" />
+       <input name="path_imagen_1" type='file' onchange="readURL(this);" id="0" />
+   </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </div>
-            </form>
-        </div>
+    <div class="form-group">
+        <label class="control-label">Imagen secundaria </label><br>
+        <img id="blah1" src="{{asset('media/images/'.$data['producto_actual']->path_imagen_2)}}" alt="your image" />
+        <input  name="path_imagen_2" type='file' onchange="readURL(this);" id="1" />
     </div>
+
+    <div class="form-group">
+        <label class="control-label">Imagen secundaria </label><br>
+        <img id="blah2" src="{{asset('media/images/'.$data['producto_actual']->path_imagen_3)}}" alt="your image" />
+        <input name="path_imagen_3" type='file' onchange="readURL(this);" id="2" />
+    </div>
+
+    <br>
+    <input type="submit" value="Editar producto" class="btn btn-success">
 
     {{ Form::close() }}
 
@@ -106,16 +117,16 @@
 @section('javascript')
     <script>
         var catalogos = JSON.parse('{!! $data['catalogo_categorias'] !!}');
-        {{--var imagen1 = window.location.origin + "/media/images/";--}}
-            {{--imagen1 += "{{$producto->path_imagen_1}}";--}}
-            {{--console.log(imagen1);--}}
-        {{--var imagen2 = "{{assert('media/images/'.$producto->path_imagen_2)}}";--}}
-        {{--var imagen3 = "{{assert('media/images/'.$producto->path_imagen_3)}}";--}}
+        var imagen1 = "{{asset('media/images/'.$data['producto_actual']->path_imagen_1)}}";
+        var imagen2 = "{{asset('media/images/'.$data['producto_actual']->path_imagen_2)}}";
+        var imagen3 = "{{asset('media/images/'.$data['producto_actual']->path_imagen_3)}}";
+        var id_categoria = "{{$data['producto_actual']->id_categoria}}";
     </script>
 
     <script src="{{ asset('js/admin/producto_create.js') }}"></script>
     <script src="{{ asset('lib/modernizr.min.js') }}"></script>
     <script src="{{ asset('lib/uploadHBR.min.js') }}"></script>
     <script src="{{ asset('lib/ckeditor/ckeditor.js') }}"></script>
+
 
 @endsection

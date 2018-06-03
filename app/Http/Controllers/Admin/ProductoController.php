@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Model\Atributo;
 use App\Model\AtributoProducto;
+use App\Model\Categoria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Catalogo;
@@ -137,21 +138,38 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
+        // datos generales
         $data = [];
-        $catalogoCategorias = Catalogo::with('categorias')->get();
-        $atributos = Atributo::all();
-        $data['catalogo_categorias'] = $catalogoCategorias;
+        $data['catalogo_categorias'] = Catalogo::with('categorias')->get();
+        $data['atributos'] = Atributo::all();
 
-        $producto = Producto::find($id);
-
-
-        $atributoValor   = AtributoProducto::where('id_producto', $id)->get();
-        $atributosDB=array();
-        foreach ($atributoValor as $valor) {
-            $atributosDB[]=$valor->id_atributo;
+        // datos del producto actual
+        $data['producto_actual'] = Producto::find($id);
+        $data['categoria_actual'] = Categoria::where('id', $data['producto_actual']->id_categoria)->first();
+        $atributos_actuales = AtributoProducto::where('id_producto', $id)->get();
+        $array_atributos = [];
+        foreach ($atributos_actuales as $atributo_actual){
+            $array_atributos[] = $atributo_actual->id_atributo;
         }
 
-        return view('admin.productoEdit', compact('producto', 'data', 'atributos', 'atributosDB'));
+        return view('admin.productoEdit', compact('data', 'array_atributos'));
+    }
+
+    /**
+     *
+     */
+    public function uploadFile($request, $image_name)
+    {
+        if ($request->hasFile($image_name)) {
+
+            $image = $request->file($image_name);
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $fileName1 = str_replace(' ', '-', $name);
+            $destinationPath = public_path('media/images');
+            $image->move($destinationPath, $name);
+
+            return $fileName1;
+        }
     }
 
     /**
@@ -163,11 +181,9 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         request()->validate([
             'nombre' => 'required',
-//            'path_imagen_1' => 'required|image',
-//            'path_imagen_2' => 'required|image',
-//            'path_imagen_3' => 'required|image',
             'codigo_barras' => 'required',
             'sku' => 'required',
             'precio' => 'required',
@@ -178,26 +194,10 @@ class ProductoController extends Controller
 
 
         // Guardar las imagenes en public/media/images
-//        if (Input::hasFile('path_imagen_1')) {
-//            $file1 = Input::file('path_imagen_1');
-//            $fileName1 = microtime() . $file1->getClientOriginalName();
-//            $fileName1 = str_replace(' ', '-', $fileName1);
-//            $file1->store('media/images', $fileName1);
-//        }
-//
-//        if (Input::hasFile('path_imagen_2')) {
-//            $file2 = Input::file('path_imagen_2');
-//            $fileName2 = microtime() . $file2->getClientOriginalName();
-//            $fileName2 = str_replace(' ', '-', $fileName2);
-//            $file2->store('media/images', $fileName2);
-//        }
-//
-//        if (Input::hasFile('path_imagen_3')) {
-//            $file3 = Input::file('path_imagen_3');
-//            $fileName3 = microtime() . $file3->getClientOriginalName();
-//            $fileName3 = str_replace(' ', '-', $fileName3);
-//            $file3->store('media/images', $fileName3);
-//        }
+
+        $fileName1 = $this->uploadFile($request, 'path_imagen_1');
+        $fileName2 = $this->uploadFile($request, 'path_imagen_2');
+        $fileName3 = $this->uploadFile($request, 'path_imagen_3');
 
         $slug = str_replace(' ', '-', $request->nombre);
 
@@ -206,9 +206,16 @@ class ProductoController extends Controller
         $producto->id_categoria = $request->id_categoria;
         $producto->nombre=$request->nombre;
         $producto->slug = $slug;
-//        $producto->path_imagen_1 = $fileName1;
-//        $producto->path_imagen_2 = $fileName2;
-//        $producto->path_imagen_3 = $fileName3;
+        if($fileName1){
+            $producto->path_imagen_1 = $fileName1;
+        }
+        if($fileName2){
+            $producto->path_imagen_2 = $fileName2;
+        }
+        if($fileName3){
+            $producto->path_imagen_3 = $fileName3;
+        }
+
         $producto->codigo_barras = $request->codigo_barras;
         $producto->sku = $request->sku;
         $producto->descripcion = $request->descripcion;
