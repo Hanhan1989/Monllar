@@ -163,7 +163,7 @@ class ProductoController extends Controller
         if ($request->hasFile($image_name)) {
 
             $image = $request->file($image_name);
-            $name = time().'.'.$image->getClientOriginalExtension();
+            $name = microtime().'.'.$image->getClientOriginalExtension();
             $fileName1 = str_replace(' ', '-', $name);
             $destinationPath = public_path('media/images');
             $image->move($destinationPath, $name);
