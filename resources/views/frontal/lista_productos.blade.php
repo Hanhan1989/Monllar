@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="row">
-        <h1>Lista de productos </h1>
+        <h3>Lista de productos </h3>
     </div>
             @foreach ($productos as $producto)
                 <div class="row" id="listar" onmouseover="anadirColorContorno(this)" onmouseleave="eliminarColorContorno(this)">
@@ -33,6 +33,6 @@
 
 @section('javascript')
     <script src="{{ asset('js/frontal/lista_productos.js') }}"></script>
-@endsection;
+@endsection
 
 

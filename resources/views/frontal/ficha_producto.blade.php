@@ -100,4 +100,4 @@
             autoplay: false
         });
     </script>
-@endsection;
+@endsection
