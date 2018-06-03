@@ -166,7 +166,7 @@ class ProductoController extends Controller
             $name = microtime().'.'.$image->getClientOriginalExtension();
             $fileName1 = str_replace(' ', '-', $name);
             $destinationPath = public_path('media/images');
-            $image->move($destinationPath, $name);
+            $image->move($destinationPath, $fileName1);
 
             return $fileName1;
         }
