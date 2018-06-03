@@ -101,6 +101,7 @@
 @section('javascript')
     <script>
         var catalogos = JSON.parse('{!! $data['catalogo_categorias'] !!}');
+        var id_categoria = "";
     </script>
 
     <script src="{{ asset('js/admin/producto_create.js') }}"></script>
