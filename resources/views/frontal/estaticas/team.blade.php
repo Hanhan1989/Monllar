@@ -22,7 +22,7 @@
                 <!-- Grid column -->
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
                     <div class="avatar mx-auto">
-                        <img style="height: 255px; width: 255px;" src="https://trello-avatars.s3.amazonaws.com/9b1930583aea56a5f8e5c6bdfad0a4d3/170.png" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        <img style="height: 250px;" src="{{asset('media/images/yo.jpg')}}" class="rounded-circle  img-fluid z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Han Han Chen</h5>
                     <p class="text-uppercase blue-text"><strong>Fundador</strong></p>
