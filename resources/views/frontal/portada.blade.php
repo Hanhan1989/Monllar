@@ -63,7 +63,7 @@
                     <div class="card md-3 box-shadow" onmouseover="anadirColorContorno(this)" onmouseleave="eliminarColorContorno(this)">
                         <img class="card-img-top" src="{{asset('media/images/'.$producto->path_imagen_1)}}" alt="Card image cap">
                         <div class="card-body">
-                            <h4><a href="{{url('producto/'.$producto->id)}}">{{str_limit($producto->titulo, 23)}}</a></h4>
+                            <h4><a href="{{url('producto/'.$producto->id)}}">{{str_limit($producto->nombre, 23)}}</a></h4>
                             <p class="d-flex card-text">{!!  str_limit(str_replace('&nbsp;', '' ,strip_tags($producto->descripcion)), 100, '...') !!}</p>
                             <div class="text-center">
                                 <div class="precio ">PRECIO
