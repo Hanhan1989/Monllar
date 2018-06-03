@@ -16,12 +16,13 @@
 
         <label>Catalogo</label>
         <select name="id_catalogo" required="required">
+            <option value="">seleccione una opción ...</option>
             @foreach($catalogos as $catalogo)
 
                 @if(isset($categoria->id)&& $catalogo->id == $categoria->id_catalogo)
                     <option selected value="{{$catalogo->id}}">{{$catalogo->nombre}}</option>
                 @else
-                <option  value="{{$catalogo->id}}">{{$catalogo->nombre}}</option>
+                <option  value="{{$catalogo->id}}" >{{$catalogo->nombre}}</option>
                 @endif
             @endforeach
 
