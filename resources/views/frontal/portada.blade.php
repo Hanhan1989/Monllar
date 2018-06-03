@@ -64,7 +64,7 @@
                         <img class="card-img-top" src="{{asset('media/images/'.$producto->path_imagen_1)}}" alt="Card image cap">
                         <div class="card-body">
                             <h4><a href="{{url('producto/'.$producto->id)}}">{{$producto->nombre}}</a></h4>
-                            <p class="d-flex card-text">{!!  str_limit($producto->descripcion, 100, '...') !!}</p>
+                            <p class="d-flex card-text">{{  str_limit(strip_tags($producto->descripcion), 100, '...') }}</p>
                             <div class="text-center">
                                 <div class="precio ">PRECIO
                                     <span>{{$producto->precio}} €</span>
