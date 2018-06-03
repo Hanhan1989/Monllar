@@ -28,9 +28,8 @@
 
         </select>
 
-        <div>
+            <br>
             <label>Nombre Categoría</label>
-        </div>
 
 
 
