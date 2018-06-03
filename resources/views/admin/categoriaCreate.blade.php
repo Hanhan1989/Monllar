@@ -28,8 +28,10 @@
 
         </select>
 
+        <div>
+            <label>Nombre Categoría</label>
+        </div>
 
-        <label>Nombre Categoría</label>
 
 
 
@@ -37,7 +39,7 @@
             @if(isset($categoria_id))
                 <input type="submit" value="Modificar Categoría" class="btn btn-success">
             @else
-                <input type="submit" value="Añadir Categoría" class="btn btn-success">
+                <input type="submit" value="Añadir Categoría" class="btn btn-success" >
             @endif
 
 
