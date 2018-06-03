@@ -39,7 +39,7 @@
                     <div class="container">
                         <div class="carousel-caption text-right">
                             <h1>Trajes</h1>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Novedades</a></p>
+
                         </div>
                     </div>
                 </div>

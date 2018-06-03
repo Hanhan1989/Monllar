@@ -16,19 +16,21 @@
 
         <label>Catalogo</label>
         <select name="id_catalogo" required="required">
+            <option value="">seleccione una opción ...</option>
             @foreach($catalogos as $catalogo)
 
                 @if(isset($categoria->id)&& $catalogo->id == $categoria->id_catalogo)
                     <option selected value="{{$catalogo->id}}">{{$catalogo->nombre}}</option>
                 @else
-                <option  value="{{$catalogo->id}}">{{$catalogo->nombre}}</option>
+                <option  value="{{$catalogo->id}}" >{{$catalogo->nombre}}</option>
                 @endif
             @endforeach
 
         </select>
 
+            <br>
+            <label>Nombre Categoría</label>
 
-        <label>Nombre Categoría</label>
 
 
 
@@ -36,7 +38,7 @@
             @if(isset($categoria_id))
                 <input type="submit" value="Modificar Categoría" class="btn btn-success">
             @else
-                <input type="submit" value="Añadir Categoría" class="btn btn-success">
+                <input type="submit" value="Añadir Categoría" class="btn btn-success" >
             @endif
 
 
