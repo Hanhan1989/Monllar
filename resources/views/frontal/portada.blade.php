@@ -90,42 +90,42 @@
                           <div class="carousel-inner" role="listbox">
                               <div class="carousel-item active">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/03658c/dddddd&text=Item+1" alt="First slide">
+                                      <img class="d-block img-fluid" src= "{{asset('media/images/portada1.jpg')}}" alt="First slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/0e7373/dddddd&text=Item+2" alt="Second slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada2.jpg')}}" alt="Second slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/265902/dddddd&text=Item+3" alt="Third slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada3.jpg')}}" alt="Third slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/592512/dddddd&text=Item+4" alt="Fourth slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada4.jpg')}}" alt="Fourth slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/d93d04/dddddd&text=Item+5" alt="Five slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada5.jpg')}}" alt="Five slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/03658c/dddddd&text=Item+6" alt="Six slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada6.jpg')}}" alt="Six slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/d93d04/dddddd&text=Item+7" alt="Seven slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada7.jpg')}}" alt="Seven slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/265902/dddddd&text=Item+8" alt="Eight slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada8.jpg')}}" alt="Eight slide">
                                   </div>
                               </div>
 
