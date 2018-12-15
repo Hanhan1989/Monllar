@@ -1,6 +1,6 @@
 # Monllar
 ### Requerimientos
-- framework: Laravel 5.3
+- framework: Laravel 5.6.20
 - php 7.1
 - mysql 5.7
 
