@@ -4,7 +4,7 @@ services:
     build:
        context: .
        dockerfile: Dockerfile-php
-    container_name: monllar_apache_php
+    container_name: monllar_apache
     ports:
       - 80:80
     volumes:
@@ -19,9 +19,9 @@ services:
     build:
        context: .
        dockerfile: Dockerfile-percona
-    container_name: monllar_db_mysql
+    container_name: monllar_db
     ports:
-      - 6666:3306
+      - 3306:3306
     volumes:
      - ./mysql/lib/:/var/lib/mysql
     environment:
