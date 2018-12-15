@@ -50,20 +50,26 @@ public/lib/monllar
 
 En las páginas web, usaremos los ficheros de esta dirección 
 
+# Node y npm
+
+[Instalar node](https://nodejs.org/es/download/) y luego ejecutar
+
+````
+npm intall
+
+````
+
 # Gulp
 
 Instalar gulp-cli
 
 ````
-
 npm install --global gulp-cli
 
 ````
-
-Instalar modululos node
-
+y luego ejecutar
 ````
-npm intall
+gulp
 
 ````
 
