@@ -22,11 +22,11 @@
                 <!-- Grid column -->
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
                     <div class="avatar mx-auto">
-                        <img src="http://via.placeholder.com/150x150" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        <img style="height: 208px;" src="{{asset('media/images/yo.jpg')}}" class="rounded-circle  img-fluid z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Han Han Chen</h5>
-                    <p class="text-uppercase blue-text"><strong>Master-Fullstack-Fundador</strong></p>
-                    <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci  sed quia non numquam modi tempora eius.</p>
+                    <p class="text-uppercase blue-text"><strong>Fundador</strong></p>
+                    <p class="grey-text">Neque porr quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci  sed quia non numquam modi tempora eius.</p>
                     <ul class="list-unstyled mb-0">
                         <!-- Facebook -->
                         <a class="p-2 fa-lg fb-ic">
@@ -47,7 +47,7 @@
                 <!-- Grid column -->
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
                     <div class="avatar mx-auto">
-                        <img src="http://via.placeholder.com/150x150" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        <img src="https://trello-avatars.s3.amazonaws.com/4c3287ec97369e4d5d148d96e1b52f0f/original.png" class="img-fluid rounded-circle z-depth-1 img-fluid" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Alex Chavez</h5>
                     <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
@@ -68,7 +68,7 @@
                 <!-- Grid column -->
                 <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
                     <div class="avatar mx-auto">
-                        <img src="http://via.placeholder.com/150x150" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        <img src="https://trello-avatars.s3.amazonaws.com/1bb7974e9d093bcadc0c865bc4a120fb/original.png" class="img-fluid rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Aldo Sivila</h5>
                     <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
@@ -93,7 +93,7 @@
                 <!-- Grid column -->
                 <div class="col-lg-3 col-md-6">
                     <div class="avatar mx-auto">
-                        <img src="http://via.placeholder.com/150x150" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        <img src="https://trello-avatars.s3.amazonaws.com/f0f013d0d882762b89c2c76e0f7ef812/original.png" class="img-fluid rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Danny Franco</h5>
                     <p class="text-uppercase blue-text"><strong>Backend developer</strong></p>

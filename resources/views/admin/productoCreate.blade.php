@@ -68,9 +68,8 @@
                     <select required class="form-control" id="listaCatalogos" style="height:30px">
                         <option value="">seleccione una opción ...</option>
                         @foreach ($data['catalogo_categorias'] as $catalogo)
-                        <option value="{{$catalogo->id}}"> {{$catalogo -> nombre}}<br>
+                        <option value="{{$catalogo->id}}"> {{$catalogo -> nombre}}</option>
                     @endforeach
-                        </option>
                     </select>
                 </div>
                 <div  class="form-group" id="seccionCategorias"></div>
@@ -102,6 +101,7 @@
 @section('javascript')
     <script>
         var catalogos = JSON.parse('{!! $data['catalogo_categorias'] !!}');
+        var id_categoria = "";
     </script>
 
     <script src="{{ asset('js/admin/producto_create.js') }}"></script>

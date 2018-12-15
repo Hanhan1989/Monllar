@@ -10,7 +10,7 @@
 
     {{--Caroulssel slider imágenes grandes--}}
 
-    <div class="row">
+    <div class="row hidden-sm-down">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -19,32 +19,27 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="first-slide" src="http://via.placeholder.com/1140x450" alt="First slide">
+                    <img class="first-slide" src="{{asset('media/images/portada11.jpg')}}" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption text-left">
-                            <h1>1.Eslogan</h1>
-                            <p>Descripcion de lo que se ofrecen.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Comprar</a></p>
+                            <h1>Abrigos de primavera</h1>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="second-slide" src="http://via.placeholder.com/1140x450" alt="Second slide">
+                    <img class="second-slide" src="{{asset('media/images/portada12.jpg')}}" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>2.Eslogan</h1>
-                            <p>Descripcion de lo que se ofrecen.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Ver mas</a></p>
+                            <h1>Zapatos</h1>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="third-slide" src="http://via.placeholder.com/1140x450" alt="Third slide">
+                    <img class="third-slide" src="{{asset('media/images/portada13.jpg')}}" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption text-right">
-                            <h1>3.Eslogan</h1>
-                            <p>>Descripcion de lo que se ofrecen.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Novedades</a></p>
+                            <h1>Trajes</h1>
+
                         </div>
                     </div>
                 </div>
@@ -68,8 +63,8 @@
                     <div class="card md-3 box-shadow" onmouseover="anadirColorContorno(this)" onmouseleave="eliminarColorContorno(this)">
                         <img class="card-img-top" src="{{asset('media/images/'.$producto->path_imagen_1)}}" alt="Card image cap">
                         <div class="card-body">
-                            <h4><a href="{{url('producto/'.$producto->id)}}">{{$producto->nombre}}</a></h4>
-                            <p class="d-flex card-text">{{ str_limit($producto->descripcion, 100, '...')}}</p>
+                            <h4><a href="{{url('producto/'.$producto->id)}}">{{str_limit($producto->nombre, 23)}}</a></h4>
+                            <p class="d-flex card-text">{!!  str_limit(str_replace('&nbsp;', '' ,strip_tags($producto->descripcion)), 100, '...') !!}</p>
                             <div class="text-center">
                                 <div class="precio ">PRECIO
                                     <span>{{$producto->precio}} €</span>
@@ -95,42 +90,42 @@
                           <div class="carousel-inner" role="listbox">
                               <div class="carousel-item active">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/03658c/dddddd&text=Item+1" alt="First slide">
+                                      <img class="d-block img-fluid" src= "{{asset('media/images/portada1.jpg')}}" alt="First slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/0e7373/dddddd&text=Item+2" alt="Second slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada2.jpg')}}" alt="Second slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/265902/dddddd&text=Item+3" alt="Third slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada3.jpg')}}" alt="Third slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/592512/dddddd&text=Item+4" alt="Fourth slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada4.jpg')}}" alt="Fourth slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/d93d04/dddddd&text=Item+5" alt="Five slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada5.jpg')}}" alt="Five slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/03658c/dddddd&text=Item+6" alt="Six slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada6.jpg')}}" alt="Six slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/d93d04/dddddd&text=Item+7" alt="Seven slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada7.jpg')}}" alt="Seven slide">
                                   </div>
                               </div>
                               <div class="carousel-item">
                                   <div class="col-lg-2 col-md-3 col-sm-4 col-4">
-                                      <img class="d-block img-fluid" src="https://dummyimage.com/1200x800/265902/dddddd&text=Item+8" alt="Eight slide">
+                                      <img class="d-block img-fluid" src="{{asset('media/images/portada8.jpg')}}" alt="Eight slide">
                                   </div>
                               </div>
 

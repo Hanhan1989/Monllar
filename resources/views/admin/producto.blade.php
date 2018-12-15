@@ -36,7 +36,7 @@
         <tr>
             <th >{{$producto->id}}</th>
             <th>{{$producto->sku}}</th>
-            <td style="width: 200px" >{{$producto->nombre}}</td>
+            <td style="width: 200px" ><a target="_blank" href="{{url('producto/'.$producto->id)}}">{{$producto->nombre}}</a></td>
             <td style="width: 250px">{!! str_limit($producto->descripcion, 100, '...') !!}</td>
             <td><img class="img" src="{{asset('media/images/'.$producto->path_imagen_1)}}" width="175" height="100"></td>
             <td>{{$producto->created_at->format('Y-m-d')}}</td>
@@ -44,7 +44,7 @@
                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
             </td>
-            <td><button type="button" class="btn btn-success">Editar</button></td>
+            <td>  <a class="btn btn-primary" href="{{ route('producto.edit',$producto->id) }}">Editar</a></td>
         </tr>
     @endforeach
             </tbody>

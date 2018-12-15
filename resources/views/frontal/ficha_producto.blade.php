@@ -9,24 +9,29 @@
 
 @section('content')
 
+    <div class="col-sm-7 d-md-none d-sm-block">
+        <img class="img-fluid" src="{{asset('media/images/'.$producto->path_imagen_1)}}">
+    </div>
+
     <div class="row bzoom_wrap" >
-        <ul class="col-md-7 align-content-center" id="bzoom">
+
+        <ul class="col-md-8 align-content-center d-sm-none d-none d-md-block d-lg-block" id="bzoom">
             <li>
-                <img class=" bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_1)}}" title="first img"/>
-                <img class=" bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_1)}}"/>
+                <img class="bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_1)}}" title="first img"/>
+                <img class="bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_1)}}"/>
             </li>
             <li>
-                <img class=" bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_2)}}"/>
-                <img class=" bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_2)}}"/>
+                <img class="bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_2)}}"/>
+                <img class="bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_2)}}"/>
             </li>
             <li>
-                <img class=" bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_3)}}"/>
-                <img class=" bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_3)}}"/>
+                <img class="bzoom_thumb_image" src="{{asset('media/images/'.$producto->path_imagen_3)}}"/>
+                <img class="bzoom_big_image" src="{{asset('media/images/'.$producto->path_imagen_3)}}"/>
             </li>
 
         </ul>
 
-        <div class="col-md-5">
+        <div class="col-md-4">
             <h3>{{ ucfirst($producto->nombre) }}</h3>
             <a href="javascript:print();" data-track-event-label="Print-Shelving-metal-point-2-colors-" data-track-event-category="Product-detail"><i class="fa fa-print" style="font-size:20px">Imprimir</i></a>
 
@@ -64,11 +69,11 @@
             </ul>
             <div class="tab-content">
                 <div id="homeTab" class="tab-pane active">
-                    <h1>Descripción del producto</h1>
+                    <br>
                     <p>{!! $producto->descripcion !!}</p>
                 </div>
                 <div id="contactTab" class="tab-pane">
-                    <h1>Información adicional</h1>
+                    <br>
                     <p>{!! $producto->informacion_adicional !!}</p>
                 </div>
             </div>
@@ -95,4 +100,4 @@
             autoplay: false
         });
     </script>
-@endsection;
+@endsection

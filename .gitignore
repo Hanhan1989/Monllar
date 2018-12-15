@@ -17,3 +17,4 @@ yarn-error.log
 storage/framework/.DS_Store
 .history
 public/media
+public/.DS_Store

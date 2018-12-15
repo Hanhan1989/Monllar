@@ -6,38 +6,25 @@
             <a href="{{url('/styletile')}}">Style Tile</a>
         </div>
         <div class="col-6 col-md">
-            <h5>Sobre nosotros</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">¿Cómo comprar?</a></li>
-                <li><a class="text-muted" href="#">Mapa del sitio</a></li>
-                <li><a class="text-muted" href="#">Instrucciones de montaje</a></li>
-                <li><a class="text-muted" href="#">Plazos de entrega</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
             <h5>Envíos</h5>
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Condiciones de venta</a></li>
-                <li><a class="text-muted" href="{{url('ubicacion')}}">Dónde estamos ?</a></li>
-                <li><a class="text-muted" href="#"> por qué Monllar?</a></li>
+                <li><a class="text-muted" href="{{url('/ubicacion')}}">Dónde estamos ?</a></li>
+                <li><a class="text-muted" href="{{url('/conocenos')}}">Que somos?</a></li>
             </ul>
         </div>
         <div class="col-6 col-md">
             <h5>Información</h5>
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Cómo develver un pedido</a></li>
-                <li><a class="text-muted" href="#">Preguntas frecuentes</a></li>
-                <li><a class="text-muted" href="#">Regalo</a></li>
-                <li><a class="text-muted" href="#">Targeta de socio</a></li>
+                <li><a class="text-muted" href="{{url('/terms')}}">términos y condiciones de uso</a></li>
+                <li><a class="text-muted" href="{{url('/contact')}}">Contacto</a></li>
             </ul>
         </div>
         <div class="col-6 col-md">
             <h5>Sobre nosotros</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="{{url('/team')}}">Team</a></li>
-                <li><a class="text-muted" href="{{url('/ubicacion')}}">Locations</a></li>
                 <li><a class="text-muted" href="{{url('/politica_de_privacidad')}}">Privacy</a></li>
-                <li><a class="text-muted" href="#">Terms</a></li>
+
             </ul>
         </div>
     </div>

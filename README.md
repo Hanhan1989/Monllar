@@ -1,6 +1,6 @@
 # Monllar
 ### Requerimientos
-- framework: Laravel 5.3
+- framework: Laravel 5.6.20
 - php 7.1
 - mysql 5.7
 
@@ -50,20 +50,26 @@ public/lib/monllar
 
 En las páginas web, usaremos los ficheros de esta dirección 
 
+# Node y npm
+
+[Instalar node](https://nodejs.org/es/download/) y luego ejecutar
+
+````
+npm intall
+
+````
+
 # Gulp
 
 Instalar gulp-cli
 
 ````
-
 npm install --global gulp-cli
 
 ````
-
-Instalar modululos node
-
+y luego ejecutar
 ````
-npm intall
+gulp
 
 ````
 

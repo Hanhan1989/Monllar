@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Model\Atributo;
 use App\Model\AtributoProducto;
+use App\Model\Categoria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Catalogo;
 use App\Model\Producto;
 use App\Model\AtributoValor;
+use Illuminate\Support\Facades\DB;
 
 use  Illuminate\Support\Facades\Input;
 
@@ -58,9 +60,11 @@ class ProductoController extends Controller
             'path_imagen_2' => 'required|image',
             'path_imagen_3' => 'required|image',
             'codigo_barras' => 'required',
-            'sku'  => 'required',
+            'sku' => 'required',
             'precio' => 'required',
-            'stock'  => 'required',
+            'stock' => 'required',
+            'descripcion' => 'required',
+            'informacion_adicional' => 'required',
         ]);
 
         // Guardar las imagenes en public/media/images
@@ -114,11 +118,6 @@ class ProductoController extends Controller
 
         return redirect()->route('producto.index')
             ->with('success', 'Producto guardado correctamente');
-
-
-//        Producto::create($request->all());
-//        return redirect()->route('producto.create')
-//            ->with('success', 'GUARDADO');
     }
 
     /**
@@ -139,7 +138,38 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        // datos generales
+        $data = [];
+        $data['catalogo_categorias'] = Catalogo::with('categorias')->get();
+        $data['atributos'] = Atributo::all();
+
+        // datos del producto actual
+        $data['producto_actual'] = Producto::find($id);
+        $data['categoria_actual'] = Categoria::where('id', $data['producto_actual']->id_categoria)->first();
+        $atributos_actuales = AtributoProducto::where('id_producto', $id)->get();
+        $array_atributos = [];
+        foreach ($atributos_actuales as $atributo_actual){
+            $array_atributos[] = $atributo_actual->id_atributo;
+        }
+
+        return view('admin.productoEdit', compact('data', 'array_atributos'));
+    }
+
+    /**
+     *
+     */
+    public function uploadFile($request, $image_name)
+    {
+        if ($request->hasFile($image_name)) {
+
+            $image = $request->file($image_name);
+            $name = microtime().'.'.$image->getClientOriginalExtension();
+            $fileName1 = str_replace(' ', '-', $name);
+            $destinationPath = public_path('media/images');
+            $image->move($destinationPath, $fileName1);
+
+            return $fileName1;
+        }
     }
 
     /**
@@ -151,7 +181,64 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        request()->validate([
+            'nombre' => 'required',
+            'codigo_barras' => 'required',
+            'sku' => 'required',
+            'precio' => 'required',
+            'stock' => 'required',
+            'descripcion' => 'required',
+            'informacion_adicional' => 'required',
+        ]);
+
+
+        // Guardar las imagenes en public/media/images
+
+        $fileName1 = $this->uploadFile($request, 'path_imagen_1');
+        $fileName2 = $this->uploadFile($request, 'path_imagen_2');
+        $fileName3 = $this->uploadFile($request, 'path_imagen_3');
+
+        $slug = str_replace(' ', '-', $request->nombre);
+
+        $producto = Producto::find($id);
+
+        $producto->id_categoria = $request->id_categoria;
+        $producto->nombre=$request->nombre;
+        $producto->slug = $slug;
+        if($fileName1){
+            $producto->path_imagen_1 = $fileName1;
+        }
+        if($fileName2){
+            $producto->path_imagen_2 = $fileName2;
+        }
+        if($fileName3){
+            $producto->path_imagen_3 = $fileName3;
+        }
+
+        $producto->codigo_barras = $request->codigo_barras;
+        $producto->sku = $request->sku;
+        $producto->descripcion = $request->descripcion;
+        $producto->informacion_adicional = $request->informacion_adicional;
+        $producto->precio = $request->precio;
+        $producto->stock = $request->stock;
+
+        $producto->save();
+
+
+        AtributoProducto::where('id_producto', $id)->delete();
+        if(!empty($request->atributo)) {
+            foreach ($request->atributo as $valor) {
+                $atributoProducto = new AtributoProducto;
+                $atributoProducto->id_producto = $id;
+                $atributoProducto->id_atributo = $valor;
+                $atributoProducto->save();
+            }
+        }
+
+        return redirect()->route('producto.index')
+            ->with('success', 'Producto actualizado correctamente');
+
     }
 
     /**

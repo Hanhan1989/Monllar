@@ -2,6 +2,7 @@
 <html lang='es'>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> @yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link href="{{ asset('css/comun.css') }}" rel="stylesheet">
@@ -40,11 +41,16 @@
                             Atributo
                         </a>
                     </li>
+                    @if (Auth::user()->id_perfil == 1)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('admin/user')}}">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('admin/perfil')}}">Perfiles</a>
+                        </li>
+                    @endif
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('admin/user')}}">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('admin/perfil')}}">Perfiles</a>
+                        <a class="nav-link">(Hola {{Auth::user()->name}} !)</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout <img class="glyph-icon" src="{{asset('lib/glyph-iconset/svg/si-glyph-sign-out.svg')}}"></a>
