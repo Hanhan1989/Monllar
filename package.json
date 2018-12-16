@@ -3,6 +3,7 @@
     "scripts": {
         "selenium": "selenium-standalone",
         "test": "wdio",
+        "report": "allure generate ./ajenos_a_laravel/webdriverio/allure-results --clean && allure open",
         "chromedriver": "chromedriver",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -13,30 +14,35 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "allure-commandline": "^2.8.1",
         "axios": "^0.18",
+        "babel-plugin-transform-runtime": "^6.23.0",
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-es2015-node6": "^0.4.0",
         "babel-register": "^6.26.0",
-        "bootstrap": "^4.0.0",
-        "cross-env": "^5.1",
+        "babel-runtime": "^6.26.0",
+        "bootstrap": "^4.1.3",
+        "cross-env": "^5.2.0",
         "jquery": "^3.2",
         "laravel-elixir": "^6.0.0-18",
-        "laravel-mix": "^2.0",
-        "lodash": "^4.17.4",
-        "popper.js": "^1.12",
-        "vue": "^2.5.7",
-        "wdio-chromedriver-service": "^0.1.3",
-        "wdio-mocha-framework": "^0.5.13",
-        "wdio-spec-reporter": "^0.1.4",
-        "webdriverio": "^4.12.0"
+        "laravel-mix": "^4.0",
+        "lodash": "^4.17.11",
+        "popper.js": "^1.14.6",
+        "vue": "^2.5.21",
+        "wdio-allure-reporter": "^0.8.3",
+        "wdio-chromedriver-service": "^0.1.5",
+        "wdio-mocha-framework": "^0.6.4",
+        "wdio-spec-reporter": "^0.1.5",
+        "webdriverio": "^4.14.1"
     },
     "dependencies": {
-        "chai": "^4.1.2",
-        "chromedriver": "2.38.3",
-        "gulp": "^3.9.1",
+        "allure": "0.0.0",
+        "chai": "^4.2.0",
+        "chromedriver": "2.45.0",
+        "gulp": "^4.0.0",
         "laravel-elixir-typescript": "^3.0.6",
         "natives": "^1.1.6",
-        "selenium-standalone": "6.15.0",
-        "typescript": "^2.8.3"
+        "selenium-standalone": "6.15.4",
+        "typescript": "^3.2.2"
     }
 }
