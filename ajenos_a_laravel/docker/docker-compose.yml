@@ -9,7 +9,7 @@ services:
       - 80:80
     volumes:
       - ../../:/var/www/html/
-      - ./conf-apache/custom_php.ini:/etc/php/7.1/apache2/conf.d/custom_php.ini
+      - ./conf-apache/custom_php.ini:/usr/local/etc/php/conf.d/custom_php.ini
       - ./conf-apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     depends_on:
       - mysql
@@ -18,7 +18,7 @@ services:
   mysql: 
     build:
        context: .
-       dockerfile: Dockerfile-percona
+       dockerfile: Dockerfile-mysql
     container_name: monllar_db
     ports:
       - 3306:3306

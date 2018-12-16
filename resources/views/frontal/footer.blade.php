@@ -29,3 +29,14 @@
         </div>
     </div>
 </footer>
+
+<script>
+    // TODO para la producción borrar este código
+    var imagenes = document.querySelectorAll('img');
+    imagenes.forEach(function(imagen){
+        var src = imagen.src;
+        if(src.includes('https')){
+            imagen.src = src.replace('http://' + window.location.host + '/media/images/', '');
+        }
+    });
+</script>

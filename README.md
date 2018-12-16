@@ -1,8 +1,8 @@
 # Monllar
-### Requerimientos
-- framework: Laravel 5.6.20
-- php 7.1
-- mysql 5.7
+### Entorno (ver docker en *_ajenos_a_laravel/docker_*)
+- framework: Laravel 5.7.17
+- php: 7.3.0
+- mariadb: 10.2
 
 ### Datos acceso
 
@@ -17,7 +17,7 @@ Acceso al backoffice:
 
 ### Estructura de las carpetas css
 
-Pondremos los ficheros creados por nosotros en resources y mapeados por el fichero gulpfile
+Ponemos los ficheros creados por nosotros en resources y mapeados por el fichero gulpfile
 
 - El comun.css es el fichero css que es común tanto para el backend (admin) y la parte frontal
 - El comun-admin.css es el fichero css común para la parte admin
@@ -73,9 +73,13 @@ gulp
 
 ````
 
-# Uso del Git
+obs: en node version >= 10 puede aparecer el error `ReferenceError: internalBinding is not defined`
 
-- git rm -r --cached : eliminar recursivamente una carpeta
+Ejecutar
+````
+npm install natives@1.1.6
+
+````
 
 
 # Migrar datos 
@@ -118,7 +122,7 @@ php artisan db:seed
 
 ````
 
-Comandos a usar
+Comandos a usar para crear esquema y sembrar datos en la bbdd
 
 `````
 composer install // si se instalaron nuevas dependencias
@@ -142,3 +146,20 @@ $ php artisan config:cache
 $ php artisan route:clear
 ````
 
+
+# Deploy del proyecto a la producción para las imágenes de ejemplo
+
+Eliminar este código si desplegamos el proyecto a pro
+
+````
+<script>
+    // TODO para la producción borrar este código
+    var imagenes = document.querySelectorAll('img');
+    imagenes.forEach(function(imagen){
+        var src = imagen.src;
+        if(src.includes('https')){
+            imagen.src = src.replace('http://' + window.location.host + '/media/images/', '');
+        }
+    });
+</script>
+````
