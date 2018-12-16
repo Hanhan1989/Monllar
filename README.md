@@ -1,8 +1,28 @@
 # Monllar
-### Entorno (ver docker en *_ajenos_a_laravel/docker_*)
+# Entorno con Docker 
+### Ver docker en *_ajenos_a_laravel/docker_*
 - framework: Laravel 5.7.17
 - php: 7.3.0
 - mariadb: 10.2
+
+1. Run the application
+```
+    docker-compose up -d
+```
+2. Poner el servername en el fichero hosts
+```
+    local.monllar.com
+```
+
+3. El puerto de acceso a mysql es `127.0.0.1:3306`
+
+4. We can change the ports of access in the docker-compose.yml file.
+
+5. The php.ini configuration is in the folder conf-apache/custom_php.ini
+
+
+Obs: 
+I don't know why the containers didn't start, but with the fixes in the file Dockerfile-mysql, this problem was fixed.
 
 ### Datos acceso
 
@@ -162,4 +182,64 @@ Eliminar este código si desplegamos el proyecto a pro
         }
     });
 </script>
+````
+
+
+# Testing
+
+## Tests funcionales: Selenium Webdriverio
+
+## Requerimientos
+
+- Instalar java y jdk
+
+-npm version 6.4.1
+
+-node version 10.14.2
+
+## Ejecutar los tests funcionales
+
+Para este proyecto, lo he instalado de forma local el servicio de selenium-standalone
+
+````
+ "scripts": {
+        "selenium-standalone": "selenium-standalone",
+        "test": "wdio"
+    }
+````
+o sea para inicializar el servicio Selenium usaremos (mirar la version del chromedriver en package.json)
+
+````
+// Descargar el chromedriver
+npm run selenium install --drivers.chrome.version=2.43 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com
+
+// Iniciar el servicio selenium 
+npm run selenium start
+
+//Para ejecutar los test
+npm run test
+````
+
+Ver los resultados
+````
+npm run report
+````
+
+
+Obs:
+
+Alternativas opcionales al servicio selenium y chromedriver de npm y setear el script del package.json
+
+Windows
+````
+// instalar scoop https://scoop.sh/  y luego
+scoop install selenium
+scoop install chromedriver
+scoop install allure
+````
+Mac
+````
+brew install selenium-server-standalone
+brew cask install chromedriver
+brew install allure
 ````
