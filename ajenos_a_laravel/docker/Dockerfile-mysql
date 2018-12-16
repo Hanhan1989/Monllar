@@ -1,7 +1,6 @@
-FROM percona:5.7
+FROM mariadb:10.2
 
 COPY ./mysql/conf/* /etc/mysql/conf.d/
 
 # Make the conf files not writeable so mysql will read them
-RUN chmod 644 /etc/mysql/conf.d/config-file.cnf
 RUN ls -l /etc/mysql/conf.d
