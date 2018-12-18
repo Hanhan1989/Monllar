@@ -1,4 +1,6 @@
 import Pagina from './pagina';
+import Url from '../test-data/url-data';
+
 
 class LoginPage extends Pagina{
 
@@ -7,7 +9,7 @@ class LoginPage extends Pagina{
     get botonEnviar(){ return browser.element('button[type=submit]');}
 
     abrir(){
-        super.abrir('http://www.monllar.com/login');
+        super.abrir(Url.frontend.login);
     }
 
     ponerEmail(){
