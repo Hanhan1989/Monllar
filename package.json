@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "selenium": "selenium-standalone",
+        "selenium": "./node_modules/.bin/selenium-standalone",
         "test": "wdio",
         "report": "allure generate ./ajenos_a_laravel/webdriverio/allure-results --clean && allure open",
         "chromedriver": "chromedriver",
@@ -28,6 +28,7 @@
         "laravel-mix": "^4.0",
         "lodash": "^4.17.11",
         "popper.js": "^1.14.6",
+        "selenium-standalone": "^6.15.4",
         "vue": "^2.5.21",
         "wdio-allure-reporter": "^0.8.3",
         "wdio-chromedriver-service": "^0.1.5",
@@ -39,10 +40,9 @@
         "allure": "0.0.0",
         "chai": "^4.2.0",
         "chromedriver": "2.45.0",
-        "gulp": "^4.0.0",
+        "gulp": "3.9.0",
         "laravel-elixir-typescript": "^3.0.6",
         "natives": "^1.1.6",
-        "selenium-standalone": "6.15.4",
         "typescript": "^3.2.2"
     }
 }
