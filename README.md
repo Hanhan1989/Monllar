@@ -47,7 +47,7 @@ Ponemos los ficheros creados por nosotros en resources y mapeados por el fichero
 
 Recordar después del cambio de los archivos sass o typescript ejecutar
 
-````
+````bash
 gulp
 
 ````
@@ -56,11 +56,10 @@ gulp
 
 Los ficheros source están en 
 
-````
+````bash
 resources/assets/typescript/monllar
 
-````
-
+````bash
 Son mapeados por gulpefile a public/lib/monllar
 
 ````
@@ -74,7 +73,7 @@ En las páginas web, usaremos los ficheros de esta dirección
 
 [Instalar node](https://nodejs.org/es/download/) y luego ejecutar
 
-````
+````bash
 npm intall
 
 ````
@@ -83,12 +82,12 @@ npm intall
 
 Instalar gulp-cli
 
-````
+````bash
 npm install --global gulp-cli
 
 ````
 y luego ejecutar
-````
+````bash
 gulp
 
 ````
@@ -96,7 +95,7 @@ gulp
 obs: en node version >= 10 puede aparecer el error `ReferenceError: internalBinding is not defined`
 
 Ejecutar
-````
+````bash
 npm install natives@1.1.6
 
 ````
@@ -107,7 +106,7 @@ npm install natives@1.1.6
 - php artisan migrate:fresh : para recrear tablas. Es útil cuando empezamos el proyecto
 - Tener en cuenta las prioridades de creación de tablas
 
-````
+````php
 
 // un perfil puede pertenecer a muchos usuarios y un usuario sólo un perfil.
 // creamos la tabla usuarios y perfiles. Luego creamos su relación y hacemos esto en perfiles. Así establecemos prioridades.
@@ -144,7 +143,7 @@ php artisan db:seed
 
 Comandos a usar para crear esquema y sembrar datos en la bbdd
 
-`````
+`````bash
 composer install // si se instalaron nuevas dependencias
 composer dump-autoload // pillar los archivos de migrations
 php artisan migrate:fresh // eliminar todas tablas y crearlas de nuevo
@@ -160,30 +159,11 @@ php artisan db:seed // sembrar contenido en las tablas
 Cambiar de nombre el fichero ".env.example" por ".env"
 luego ejecutar desde la terminal de Laragon
 
-````
+````bash
 $ php artisan key:generate
 $ php artisan config:cache
 $ php artisan route:clear
 ````
-
-
-# Deploy del proyecto a la producción para las imágenes de ejemplo
-
-Eliminar este código si desplegamos el proyecto a pro
-
-````
-<script>
-    // TODO para la producción borrar este código
-    var imagenes = document.querySelectorAll('img');
-    imagenes.forEach(function(imagen){
-        var src = imagen.src;
-        if(src.includes('https')){
-            imagen.src = src.replace('http://' + window.location.host + '/media/images/', '');
-        }
-    });
-</script>
-````
-
 
 # Testing
 
@@ -201,7 +181,7 @@ Eliminar este código si desplegamos el proyecto a pro
 
 Para este proyecto, lo he instalado de forma local el servicio de selenium-standalone
 
-````
+````json
  "scripts": {
         "selenium-standalone": "selenium-standalone",
         "test": "wdio"
@@ -209,7 +189,7 @@ Para este proyecto, lo he instalado de forma local el servicio de selenium-stand
 ````
 o sea para inicializar el servicio Selenium usaremos (mirar la version del chromedriver en package.json)
 
-````
+````bash
 // Descargar el chromedriver
 npm run selenium install --drivers.chrome.version=2.43 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com
 
@@ -221,7 +201,7 @@ npm run test
 ````
 
 Ver los resultados
-````
+````bash
 npm run report
 ````
 
@@ -231,14 +211,14 @@ Obs:
 Alternativas opcionales al servicio selenium y chromedriver de npm y setear el script del package.json
 
 Windows
-````
+````bash
 // instalar scoop https://scoop.sh/  y luego
 scoop install selenium
 scoop install chromedriver
 scoop install allure
 ````
 Mac
-````
+````bash
 brew install selenium-server-standalone
 brew cask install chromedriver
 brew install allure
