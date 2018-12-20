@@ -19,7 +19,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="first-slide" src="{{asset('media/images/portada11.jpg')}}" alt="First slide">
+                    <img class="first-slide" src="{{asset('media/images/default.jpg')}}" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>Abrigos de primavera</h1>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="second-slide" src="{{asset('media/images/portada12.jpg')}}" alt="Second slide">
+                    <img class="second-slide" src="{{asset('media/images/default.jpg')}}" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Zapatos</h1>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="third-slide" src="{{asset('media/images/portada13.jpg')}}" alt="Third slide">
+                    <img class="third-slide" src="{{asset('media/images/default.jpg')}}" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption text-right">
                             <h1>Trajes</h1>
