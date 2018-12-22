@@ -6,7 +6,7 @@
 - mariadb: 10.2
 
 1. Run the application
-```
+```bash
     docker-compose up -d
 ```
 2. Poner el servername en el fichero hosts
@@ -153,6 +153,13 @@ php artisan db:seed // sembrar contenido en las tablas
 `````
 
 
+## Sistema debug de Laravel Telescope
+
+```bash
+php artisan telescope:install
+php artisan migrate
+php artisan telescope:publish
+```
 
 ## Observaciones
 
