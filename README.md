@@ -160,6 +160,7 @@ php artisan telescope:install
 php artisan migrate
 php artisan telescope:publish
 ```
+El dashboard de debug está en `/telescope`
 
 ## Observaciones
 
