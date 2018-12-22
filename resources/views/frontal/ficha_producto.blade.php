@@ -4,7 +4,6 @@
 
 @section('css')
     <link href="{{ asset('css/frontal/ficha_producto.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
 @section('content')
@@ -83,7 +82,6 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{{ asset('js/frontal/jqzoom.js') }}"></script>
     <script src="{{ asset('js/frontal/ficha_producto.js') }}"></script>
     <script type="text/javascript">
