@@ -28,6 +28,10 @@ RUN cd /tmp \
     && ./configure && make \
     && cp ./modules/xdebug.so /usr/local/lib/php/extensions/xdebug.so
 
+# Poner los ejecutables del composer como globales
+
+RUN echo export PATH="$PATH:/var/www/html/vendor/bin" >> ~/.bashrc
+
 # Activar opciones de apache
 RUN a2enmod rewrite
 
