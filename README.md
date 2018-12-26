@@ -231,3 +231,11 @@ brew install selenium-server-standalone
 brew cask install chromedriver
 brew install allure
 ````
+
+## Tests unitarios con phpunit
+
+Ejecutar los tests unitarios
+
+```bash
+phpunit --testdox
+```
