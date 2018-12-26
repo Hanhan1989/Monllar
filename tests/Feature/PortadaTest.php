@@ -12,30 +12,46 @@ use Illuminate\Support\Facades\Log;
  */
 class PortadaTest extends TestCase
 {
+    
     /**
      * Devolver el contenido de la portada home
      */
-    public function getResponse()
+    public function getResponse(): object
     {
         return $this->get('/');
     }
 
+    public function getProductos():object
+    {
+        return $this->getResponse()->original->getData()['productos'];
+    }
+
     /**
-     * Testea que la cabecera devuelva 200. Es decir que la portada es accesible
+     * Testea que la cabecera devuelva 200. Es decir que la portada sea accesible
      *
      * @return void
      */
-    public function testAccederPortada()
+    public function testAccederPortada(): void
     {
         $this->getResponse()->assertStatus(200); 
     }
 
     /**
+     * Testea que se saquen 8 productos en la portada
+     */
+    public function testSacar8productosEnPortada(): void
+    {
+        $productos = $this->getProductos();
+        
+        $this->assertEquals(count($productos), 8);
+    }
+
+    /**
      * Testea que el stock no sea negativo
      */
-    public function testStockNoDebeSerNegativo()
+    public function testStockNoDebeSerNegativo():void
     {
-        $productos = $this->getResponse()->original->getData()['productos'];
+        $productos = $this->getProductos();
         $producto = $productos[0];
         for($i = 1;  $producto->stock > 0 && $i < count($productos); $i++){
             $producto = $productos[$i];
