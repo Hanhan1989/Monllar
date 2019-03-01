@@ -35,6 +35,22 @@ services:
       MYSQL_PASSWORD: ${MONLLAR_MYSQL_PASSWORD}
     networks: 
       - monllar
+  
+  sonarqube:
+    build:
+      context: sonarqube
+    image: monllar_sonarqube
+    container_name: monllar_sonarqube
+    env_file: .env
+    ports:
+      - 7000:9000
+    volumes:
+      - ./sonarqube/conf:/opt/sonarqube/conf
+      - ./sonarqube/data:/opt/sonarqube/data
+      - ./sonarqube/logs:/opt/sonarqube/logs
+      - ./sonarqube/extensions:/opt/sonarqube/extensions
+    networks: 
+      - monllar
     
 networks:
   monllar:

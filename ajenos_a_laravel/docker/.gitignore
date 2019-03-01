@@ -1,1 +1,8 @@
+
+#Mysql
 mysql/lib
+
+# Sonar
+sonarqube/data
+sonarqube/logs
+sonarqube/extensions
