@@ -1,6 +1,0 @@
-FROM mariadb:10.2
-
-COPY ./mysql/conf/* /etc/mysql/conf.d/
-
-# Make the conf files not writeable so mysql will read them
-RUN ls -l /etc/mysql/conf.d

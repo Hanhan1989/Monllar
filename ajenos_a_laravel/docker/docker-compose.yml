@@ -1,33 +1,41 @@
-version: '3'
+version: '3.7'
 services:
   apache_php:
     build:
-       context: .
-       dockerfile: Dockerfile-php
+       context: apache
+    image: monllar_apache
     container_name: monllar_apache
+    env_file: .env
     ports:
       - 80:80
     volumes:
-      - ../../:/var/www/html/
-      - ./conf-apache/custom_php.ini:/usr/local/etc/php/conf.d/custom_php.ini
-      - ./conf-apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ${RUTA_CODIGO_FUENTE}:/var/www/html/
+      - ./apache/conf/monllar.ini:/usr/local/etc/php/conf.d/monllar.ini
+      - ./apache/conf/monllar.conf:/etc/apache2/sites-available/monllar.conf
     depends_on:
       - mysql
-    links:
-      - mysql
+    networks:
+      - monllar
   mysql: 
     build:
-       context: .
-       dockerfile: Dockerfile-mysql
-    container_name: monllar_db
+       context: mysql
+    image: monllar_mysql
+    container_name: monllar_mysql
+    env_file: .env
     ports:
       - 3306:3306
     volumes:
      - ./mysql/lib/:/var/lib/mysql
+     - ./mysql/conf/monllar.cnf:/etc/mysql/conf.d/monllar.cnf
     environment:
       # defaul administator user is root
-      MYSQL_USER: monllar
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: monllar
-      MYSQL_PASSWORD: monllar
+      MYSQL_USER: ${MONLLAR_MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MONLLAR_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MONLLAR_MYSQL_DATABASE}
+      MYSQL_PASSWORD: ${MONLLAR_MYSQL_PASSWORD}
+    networks: 
+      - monllar
     
+networks:
+  monllar:
+    driver: bridge
