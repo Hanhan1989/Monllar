@@ -39,16 +39,31 @@ services:
   sonarqube:
     build:
       context: sonarqube
-    image: monllar_sonarqube
+    image: sonarqube
     container_name: monllar_sonarqube
     env_file: .env
     ports:
       - 7000:9000
     volumes:
-      - ./sonarqube/conf:/opt/sonarqube/conf
+      - ./sonarqube/conf/sonar.properties:/opt/sonarqube/conf/sonar.properties
       - ./sonarqube/data:/opt/sonarqube/data
       - ./sonarqube/logs:/opt/sonarqube/logs
-      - ./sonarqube/extensions:/opt/sonarqube/extensions
+      # - ./sonarqube/extensions:/opt/sonarqube/extensions
+    networks: 
+      - monllar
+
+  sonarqube_mysql: 
+    image: mysql:5.6
+    container_name: sonarqube_mysql
+    env_file: .env
+    ports:
+      - 3307:3306
+    environment:
+      # defaul administator user is root
+      MYSQL_USER: ${SONARQUBE_MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${SONARQUBE_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${SONARQUBE_MYSQL_DATABASE}
+      MYSQL_PASSWORD: ${SONARQUBE_MYSQL_PASSWORD}
     networks: 
       - monllar
     
