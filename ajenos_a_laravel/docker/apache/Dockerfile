@@ -15,7 +15,7 @@ RUN curl --silent --show-error https://getcomposer.org/installer | php && mv com
 RUN curl -Lo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip \
     && unzip sonar-scanner.zip -d /tmp \
     && mv /tmp/sonar-scanner-3.3.0.1492-linux /usr/local/lib/sonar-scanner  \
-    && echo export PATH="$PATH:/usr/local/lib/sonar-scanner/bin/" >> ~/.bashrc  
+    && ln -s /usr/local/lib/sonar-scanner/bin/sonar-scanner /usr/local/bin/
 
 # Instalar extensiones de php necesarias para Laravel 5.6.2.0
 RUN apt-get install -y \
