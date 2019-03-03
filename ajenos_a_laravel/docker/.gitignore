@@ -6,3 +6,4 @@ mysql/lib
 sonarqube/data
 sonarqube/logs
 sonarqube/extensions
+sonarqube/mysql/data

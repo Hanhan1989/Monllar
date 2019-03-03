@@ -21,3 +21,4 @@ public/media
 public/.DS_Store
 ajenos_a_laravel/webdriverio/allure-results
 allure-report
+.scannerwork

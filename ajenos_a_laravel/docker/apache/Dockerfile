@@ -1,13 +1,21 @@
 FROM php:7.3.0-apache
 
+# Installar herramientas útiles
 RUN apt-get update && \
     apt-get install -y \
-        git \
+        nano \
         wget \
         zip
 
+# Ejecutables útiles
+RUN cd /tmp 
 # Instalar composer
-RUN cd /tmp && curl --silent --show-error https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+RUN curl --silent --show-error https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer 
+#Instalar sonar-scanner
+RUN curl -Lo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip \
+    && unzip sonar-scanner.zip -d /tmp \
+    && mv /tmp/sonar-scanner-3.3.0.1492-linux /usr/local/lib/sonar-scanner  \
+    && echo export PATH="$PATH:/usr/local/lib/sonar-scanner/bin/" >> ~/.bashrc  
 
 # Instalar extensiones de php necesarias para Laravel 5.6.2.0
 RUN apt-get install -y \
@@ -29,7 +37,6 @@ RUN cd /tmp \
     && cp ./modules/xdebug.so /usr/local/lib/php/extensions/xdebug.so
 
 # Poner los ejecutables del composer como globales
-
 RUN echo export PATH="$PATH:/var/www/html/vendor/bin" >> ~/.bashrc
 
 # Activar opciones de apache

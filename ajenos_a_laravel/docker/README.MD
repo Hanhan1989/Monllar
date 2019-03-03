@@ -1,9 +1,17 @@
 # Sonarqube
 
-Parece que el archivo sonar.properties no hace ningún efecto. Como solución ponemos los properties en forma de variables globales
+Parece que el archivo sonar.properties no hace ningún efecto. Como solución ponemos los properties en forma de variables globales.
 
+## Sonar Scanner
 
+Un ejecutable en el host del proyecto del código fuente. Procesa el código. y lo envía al servidor donde está el servicio sonarqube levantado. El tcp de este servidor está en el archivo sonar-scanner.properties. Es importante mantener el mismo nombre del fichero.
 
+Cada vez que hay cambios ejecutar:
+
+````bash
+cd /var/www/html
+sonar-scanner
+````
 
 # Observaciones 
 
