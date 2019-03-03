@@ -12,6 +12,7 @@ services:
       - ${RUTA_CODIGO_FUENTE}:/var/www/html/
       - ./apache/conf/monllar.ini:/usr/local/etc/php/conf.d/monllar.ini
       - ./apache/conf/monllar.conf:/etc/apache2/sites-available/monllar.conf
+      - monllar_html_src:/tmp
     depends_on:
       - mysql
     networks:
@@ -27,6 +28,7 @@ services:
     volumes:
      - ./mysql/lib/:/var/lib/mysql
      - ./mysql/conf/monllar.cnf:/etc/mysql/conf.d/monllar.cnf
+     - monllar_html_src:/tmp
     environment:
       # defaul administator user is root
       MYSQL_USER: ${MONLLAR_MYSQL_USER}
@@ -58,6 +60,8 @@ services:
     env_file: .env
     ports:
       - 3307:3306
+    volumes:
+      - ${RUTA_CODIGO_FUENTE}:/var/www/html/
     environment:
       # defaul administator user is root
       MYSQL_USER: ${SONARQUBE_MYSQL_USER}
@@ -70,3 +74,6 @@ services:
 networks:
   monllar:
     driver: bridge
+
+volumes:
+  monllar_html_src:
