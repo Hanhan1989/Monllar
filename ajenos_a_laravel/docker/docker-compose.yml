@@ -10,8 +10,6 @@ services:
       - 80:80
     volumes:
       - ${RUTA_CODIGO_FUENTE}:/var/www/html/
-      - ./apache/conf/monllar.ini:/usr/local/etc/php/conf.d/monllar.ini
-      - ./apache/conf/monllar.conf:/etc/apache2/sites-available/monllar.conf
       - ./sonarqube/scanner/conf:/usr/local/lib/sonar-scanner/conf
       - monllar_html_src:/tmp
     depends_on:

@@ -39,6 +39,13 @@ RUN cd /tmp \
 # Poner los ejecutables del composer como globales
 RUN echo export PATH="$PATH:/var/www/html/vendor/bin" >> ~/.bashrc
 
+# Activar la configuración monllar.conf del sites-available y desactivar el 000. Se hace un link simbolico del sites available a enabled
+COPY ./conf/monllar.conf /etc/apache2/sites-available
+COPY ./conf/monllar.ini /usr/local/etc/php/conf.d/monllar.ini
+
+RUN a2ensite monllar.conf
+RUN a2dissite 000-default.conf
+
 # Activar opciones de apache
 RUN a2enmod rewrite
 
